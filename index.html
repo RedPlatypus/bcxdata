@@ -771,38 +771,7 @@ While this data can be received from other places. Should we go to the trouble o
 <td>The last price before moving to the next period</td>
 </tr>
 </tbody></table>
-<h1 id='exchanges'>Exchanges</h1><pre class="highlight javascript tab-javascript"><code><span class="c1">// get exchange </span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges"</span><span class="p">);</span>
-
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"exchanges"</span><span class="p">:[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">I</span><span class="w"> </span><span class="err">figure</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">calling</span><span class="w"> </span><span class="err">this</span><span class="p">,</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">don't</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">which</span><span class="w"> </span><span class="err">exchange</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">information</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">yet</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">probably</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">easy</span><span class="w"> </span><span class="err">way</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">loop</span><span class="w"> </span><span class="err">through</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">exchanges.</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-           </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Kraken"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"krak"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"volume"</span><span class="p">:</span><span class="s2">"243921.38"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"timeStamp"</span><span class="p">:</span><span class="s2">"2018-05-03T20:31:24.737Z"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"pairs"</span><span class="p">:[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">pairs</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">traded</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">exchange.</span><span class="w">
-           </span><span class="err">//</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//api.kraken.com/</span><span class="mi">0</span><span class="err">/public/AssetPairs</span><span class="w">
-           </span><span class="err">//</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">objects</span><span class="w"> </span><span class="err">under</span><span class="w"> </span><span class="err">`result`</span><span class="w">
-               </span><span class="s2">"bcheur"</span><span class="p">,</span><span class="w">
-               </span><span class="s2">"bchusd"</span><span class="p">,</span><span class="w">
-               </span><span class="s2">"bchxtbt"</span><span class="p">,</span><span class="w">
-               </span><span class="s2">"dasheur"</span><span class="p">,</span><span class="w">
-               </span><span class="s2">"dashusd"</span><span class="p">,</span><span class="w">
-               </span><span class="s2">"dashxbt"</span><span class="p">,</span><span class="w">
-               </span><span class="s2">"eoseth"</span><span class="p">,</span><span class="w">
-               </span><span class="err">...</span><span class="w">
-           </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h1 id='exchanges'>Exchanges</h1>
 <p>Returns status and information about exchanges we track. Note in early development, this data will be pulled directly from barcharts</p>
 <h2 id='exch-endpoints'>EXCH Endpoints</h2>
 <table><thead>
@@ -836,7 +805,38 @@ While this data can be received from other places. Should we go to the trouble o
 <td>The exchange_id, that can be received from endpoint <code>/exchanges</code></td>
 </tr>
 </tbody></table>
-<h2 id='exch-returned-data'>EXCH Returned Data</h2>
+<h2 id='exch-returned-data'>EXCH Returned Data</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// get exchange </span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges"</span><span class="p">);</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"exchanges"</span><span class="p">:[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">I</span><span class="w"> </span><span class="err">figure</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">calling</span><span class="w"> </span><span class="err">this</span><span class="p">,</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">don't</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">which</span><span class="w"> </span><span class="err">exchange</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">information</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">yet</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">probably</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">easy</span><span class="w"> </span><span class="err">way</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">loop</span><span class="w"> </span><span class="err">through</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">exchanges.</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+           </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Kraken"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"krak"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"volume"</span><span class="p">:</span><span class="s2">"243921.38"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"timeStamp"</span><span class="p">:</span><span class="s2">"2018-05-03T20:31:24.737Z"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"pairs"</span><span class="p">:[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">pairs</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">traded</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">exchange.</span><span class="w">
+           </span><span class="err">//</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//api.kraken.com/</span><span class="mi">0</span><span class="err">/public/AssetPairs</span><span class="w">
+           </span><span class="err">//</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">objects</span><span class="w"> </span><span class="err">under</span><span class="w"> </span><span class="err">`result`</span><span class="w">
+               </span><span class="s2">"bcheur"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"bchusd"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"bchxtbt"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"dasheur"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"dashusd"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"dashxbt"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"eoseth"</span><span class="p">,</span><span class="w">
+               </span><span class="err">...</span><span class="w">
+           </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>what will we return for JSON format? What does each category mean?</p>
 
 <table><thead>
