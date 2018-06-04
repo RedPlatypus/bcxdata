@@ -201,7 +201,7 @@
       <script src="javascripts/all_nosearch.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;javascript&quot;,&quot;python&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,7 +212,6 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="javascript">javascript</a>
-              <a href="#" data-language-name="python">python</a>
         </div>
       <div id="toc" class="toc-list-h1">
           <li>
@@ -307,23 +306,6 @@
               </ul>
           </li>
           <li>
-            <a href="#developer" class="toc-h1 toc-link" data-title="developer">Developer</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#dev-endpoints" class="toc-h2 toc-link" data-title="dev-endpoints">DEV Endpoints</a>
-                  </li>
-                  <li>
-                    <a href="#dev-passed-parameters" class="toc-h2 toc-link" data-title="dev-passed-parameters">DEV Passed Parameters</a>
-                  </li>
-                  <li>
-                    <a href="#dev-coinid" class="toc-h2 toc-link" data-title="dev-coinid">DEV CoinId</a>
-                  </li>
-                  <li>
-                    <a href="#dev-returned-data" class="toc-h2 toc-link" data-title="dev-returned-data">DEV Returned Data</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
@@ -351,7 +333,7 @@
 <blockquote>
 <p>Example Responses</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Use</span><span class="w"> </span><span class="err">Envelopes</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">arrays</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Use</span><span class="w"> </span><span class="err">envelopes</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="err">data</span><span class="p">,</span><span class="w"> </span><span class="err">especially</span><span class="w"> </span><span class="err">arrays</span><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="s2">"object"</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="w">
@@ -367,9 +349,29 @@
   </span><span class="s2">"object"</span><span class="p">:</span><span class="mi">2</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 
-</span><span class="err">//</span><span class="w"> </span><span class="err">Successful</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w"> </span><span class="err">succesfull</span><span class="w"> </span><span class="err">operation</span><span class="w">
+</span><span class="err">//</span><span class="w"> </span><span class="err">Successful</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w"> </span><span class="err">succesful</span><span class="w"> </span><span class="err">operation</span><span class="w">
 </span><span class="err">//</span><span class="w"> </span><span class="err">no</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">returned.</span><span class="w">
 </span><span class="p">{</span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">}</span><span class="w">
+
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">variables</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">underscored</span><span class="w"> </span><span class="err">&amp;</span><span class="w"> </span><span class="err">lowercase</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"coin_id"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"price_change"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.194</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"noCamelCaseReturn"</span><span class="p">:</span><span class="w"> </span><span class="mi">342</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">Sample</span><span class="w"> </span><span class="err">Error</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="err">TODO</span><span class="p">:</span><span class="w"> </span><span class="err">Determine</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">correct</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w">   </span><span class="mi">405</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="w">  </span><span class="s2">"The interval was too small for the requested time period."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <p>The API philosophy uses the following guidelines:</p>
 
@@ -396,12 +398,13 @@
 <ul>
 <li>Still return an object with data as a top level obj</li>
 </ul></li>
+<li><em>Variables</em> should be underscored and lowercase. id is not an exception.</li>
 </ul>
 <h2 id='versioning'>Versioning</h2>
 <p>We follow semantic versioning. Major changes that will break previous functionality should be at a new endpoint of v2, v3, etc. Minor changes that don&#39;t break functionality, and can use the same endpoints will be rolled out with notice to users to allow for a smooth transition to the newer API.</p>
 <h2 id='json-and-csv-support'>JSON and CSV Support</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// Example Request for CSV data</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/BTC?format=csv"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data2</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/developers?format=csv"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/bitcoin?format=csv"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data2</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges?format=csv"</span><span class="p">);</span>
 </code></pre>
 <p>By default data will be returned in <code>JSON</code> format. The flag <code>?format=csv</code> should return csv data without headers in the data.</p>
 
@@ -416,55 +419,63 @@
 <p><strong>Base Url</strong>: <code>api.bcxdata.com/v1/</code></p>
 <h3 id='v1-non-auth-endpoints'>v1 non-auth endpoints</h3>
 <ul>
+<li><code>/ping</code> -&gt; health check of API</li>
 <li><code>/candles</code> -&gt; <a href="#amalgamated-candles">go to amalgamated candles</a> -&gt; USD amalgamation is imposed accross exchanges
 
 <ul>
-<li><code>/candles/:coinId[USD]</code></li>
-<li><code>/candles/:coinId[USD]/:frequency</code></li>
-<li><code>/candles/:coinId[USD]/:frequency/:period?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></li>
+<li><code>/candles/:bcx_symbol[USD]</code></li>
+<li><code>/candles/:bcx_symbol[USD]/:frequency</code></li>
+<li><code>/candles/:bcx_symbol[USD]/:frequency/:period?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></li>
 </ul></li>
 <li><code>/exchanges</code> <a href="#exchanges">go to exchanges</a>
 
 <ul>
-<li><code>/exchanges/:exchangeId</code></li>
+<li><code>/exchanges/:exchange_id</code></li>
 </ul></li>
-<li><code>/exchanges/:exchangeId/candles</code> <a href="#exchange-candles">go to exchange candles</a>
+<li><code>/exchanges/:exchange_id/candles</code> <a href="#exchange-candles">go to exchange candles</a>
 
 <ul>
-<li><code>/exchanges/:exchangeId/candles/:currency</code></li>
-<li><code>/exchanges/:exchangeId/candles/:currency/:frequency</code></li>
-<li><code>/exchanges/:exchangeId/candles/:currency/:frequency/:interval?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></li>
+<li><code>/exchanges/:exchange_id/candles/:currency</code></li>
+<li><code>/exchanges/:exchange_id/candles/:currency/:frequency</code></li>
+<li><code>/exchanges/:exchange_id/candles/:currency/:frequency/:interval?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></li>
 </ul></li>
 <li><code>/coins</code> -&gt; Data for the view of homepage on bcxdata.com <a href="#coins">go to coins</a>
 
 <ul>
-<li><code>/coins/:coinId</code> -&gt; All data for a particular coin, dev, community, news, cheatsheet, sumarized version of particular coin</li>
-<li><code>/coins/:coinId/developer</code> -&gt; all dev data on github: stars, forks, branches, issues etc...</li>
-<li><code>/coins/:coinId/community</code> -&gt; all community data: facebook, youtube, twitter, reddit, reddit hot issues, recent news etc...</li>
-<li><code>/coins/:coinId/news</code> -&gt; news on a particular coin # of posts in the past 24h</li>
-<li><code>/coins/:coinId/cheat</code> -&gt; cheat sheet data for the coin</li>
-<li><code>/coins/:coinId/tcmi</code> -&gt; gets the TCMI ranking for a coin</li>
+<li><code>/coins/:bcx_symbol</code> -&gt; All data for a particular coin, dev, community, news, cheatsheet, sumarized version of particular coin</li>
+<li><code>/coins/:bcx_symbol/developer</code> -&gt; all dev data on github: stars, forks, branches, issues etc...</li>
+<li><code>/coins/:bcx_symbol/community</code> -&gt; all community data: facebook, youtube, twitter, reddit, reddit hot issues, recent news etc...</li>
+<li><code>/coins/:bcx_symbol/news</code> -&gt; news on a particular coin # of posts in the past 24h</li>
+<li><code>/coins/:bcx_symbol/cheat</code> -&gt; cheat sheet data for the coin</li>
+<li><code>/coins/:bcx_symbol/tcmi</code> -&gt; gets the TCMI ranking for a coin</li>
+</ul></li>
+<li><code>/dashboards</code> -&gt; <a href="#dashboards">go to dashboards</a> the home page information
+
+<ul>
+<li><code>/dashboards/:bcx_symbol</code> -&gt; the dashboard for a specific bcx_symbol</li>
 </ul></li>
 </ul>
 
 <p><strong>Questioning the following end points. Are they necessary. Do they add value?</strong>
 While this data can be received from other places. Should we go to the trouble of adding in these additional end points?</p>
 
-<ul>
-<li><code>/developers</code> -&gt; all developer data <a href="#developer">go to developer</a>
+<p>Current answer is NO, don&#39;t implement these, unless easy enough to do.</p>
 
 <ul>
-<li><code>/developers/:coinId</code>-&gt; developer data for a particular coin. Can be received from <code>coins/:coinId/developer</code></li>
+<li><code>/developers</code> -&gt; all developer data for all coins
+
+<ul>
+<li><code>/developers/:bcx_symbol</code>-&gt; developer data for a particular coin. Can be received from <code>coins/:bcx_symbol/developer</code></li>
 </ul></li>
 <li><code>/community</code> -&gt; all community data
 
 <ul>
-<li><code>/community/:coinId</code> -&gt; community data for a particular coin. Can be received from <code>coins/:coinId/community</code></li>
+<li><code>/community/:bcx_symbol</code> -&gt; community data for a particular coin. Can be received from <code>coins/:bcx_symbol/community</code></li>
 </ul></li>
-<li><code>/tcmi</code> -&gt; all TOTAL CRYPTO MARKE INDEX
+<li><code>/tcmi</code> -&gt; all coins listing <strong>TOTAL CRYPTO MARKET INDEX</strong>
 
 <ul>
-<li><code>/tcmi/:coinId</code> -&gt; get the crypto index for a particular coin <code>coins/:coinId/tcmi</code></li>
+<li><code>/tcmi/:bcx_symbol</code> -&gt; get the crypto index for a particular coin <code>coins/:bcx_symbol/tcmi</code></li>
 </ul></li>
 </ul>
 <h2 id='v2-endpoints'>v2 Endpoints</h2>
@@ -473,48 +484,10 @@ While this data can be received from other places. Should we go to the trouble o
 <ul>
 <li><code>/nodes</code> -&gt; returns number of nodes for a particular coin</li>
 <li><code>/activty</code> -&gt; vol, transactions, avg/day, record</li>
-<li><code>/candles/:coinId[:coinPair]</code> -&gt; ability to specify the coin&#39;s pair</li>
-<li><code>/trades/:coinId</code></li>
+<li><code>/candles/:bcx_symbol[:coinPair]</code> -&gt; ability to specify the coin&#39;s pair</li>
+<li><code>/trades/:bcx_symbol</code></li>
 </ul>
-<h1 id='amalgamated-candles'>Amalgamated Candles</h1><pre class="highlight javascript tab-javascript"><code><span class="c1">// type script</span>
-
-
-</code></pre><pre class="highlight python tab-python"><code><span class="c"># TODO: fix python example</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">Signature</span> <span class="p">:</span> <span class="s">"XXX"</span><span class="p">,</span>
-    <span class="n">Payload</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span>
-    <span class="n">Key</span><span class="p">:</span> <span class="s">"XXX"</span>
-<span class="p">}</span>
-
-<span class="n">bcx_url</span> <span class="o">=</span> <span class="s">"&lt;</span><span class="si">%</span><span class="s">s</span><span class="si">%</span><span class="s">&gt;"</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">bcx_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s">'data'</span><span class="p">],</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-
-
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"lastPrice"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"high"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"low"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"previousClose"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"netChange"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"percentChange"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"bid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ask"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"volume"</span><span class="p">:</span><span class="s2">""</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h1 id='amalgamated-candles'>Amalgamated Candles</h1>
 <p>Return a volume weighted average accross all exchanges we track for the selected currency or currencies.</p>
 
 <p>Authentication | <code>None</code></p>
@@ -525,7 +498,31 @@ While this data can be received from other places. Should we go to the trouble o
     <li>specify what we are storing the date object as &amp; in what format.</li>
 </ol>
 </aside>
-<h2 id='ac-endpoints'>AC Endpoints</h2>
+<h2 id='ac-endpoints'>AC Endpoints</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// get amalgamated candles </span>
+<span class="c1">// sampling defaults of 1 day frequency over a 30 day time period</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/btc"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"btcusd"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bitcoin over United States Dollars"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">6500.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">7500.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">92902.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_price"</span><span class="p">:</span><span class="mi">7000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w"> </span><span class="err">//</span><span class="w">  </span><span class="mi">29</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">points</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='v1-endpoints'>v1 endpoints</h3>
 <table><thead>
 <tr>
 <th>Key</th>
@@ -535,23 +532,34 @@ While this data can be received from other places. Should we go to the trouble o
 </thead><tbody>
 <tr>
 <td>Endpoints</td>
-<td><code>/candles</code></td>
-<td>Returns all amalgamated candles over the past <code>30 days</code>, with a <code>1d</code> frequency</td>
-</tr>
-<tr>
-<td>Endpoints</td>
-<td><code>/candles/:coinId</code></td>
+<td><code>/candles/:bcx_symbol</code></td>
 <td>Returns amalgamated candles for the coin over <code>30 days</code>, with a <code>1d</code> frequency</td>
 </tr>
 <tr>
 <td>Endpoints</td>
-<td><code>/candles/:coinId/:frequency</code></td>
+<td><code>/candles/:bcx_symbol/:frequency</code></td>
 <td>Returns the largest time period of possible for a specified frequency size. See <a href="#ac-frequency">Frequency</a> for more information.</td>
 </tr>
 <tr>
 <td>Endpoints</td>
-<td><code>/candles/:coinId/:frequency/</code><br><code>:period?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></td>
-<td>Returns the time period of data at the frequency for the <code>coinId</code> specified.</td>
+<td><code>/candles/:bcx_symbol/:frequency/</code><br><code>:period?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></td>
+<td>Returns the time period of data at the frequency for the <code>bcx_symbol</code> specified.</td>
+</tr>
+</tbody></table>
+<h3 id='v1-to-be-discussed-endpoints'>v1 to be discussed endpoints</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Return</th>
+<th>Problem</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoints</td>
+<td><code>/candles</code></td>
+<td>Returns all amalgamated candles over the past <code>30 days</code>, with a <code>1d</code> frequency.</td>
+<td>If we return all data, won&#39;t this be a costly API request as we will have to return all coin data?</td>
 </tr>
 </tbody></table>
 <h2 id='ac-passed-parameters'>AC Passed Parameters</h2>
@@ -564,7 +572,7 @@ While this data can be received from other places. Should we go to the trouble o
 </tr>
 </thead><tbody>
 <tr>
-<td><code>coinId</code></td>
+<td><code>bcx_symbol</code></td>
 <td><code>BTC</code></td>
 <td><code>String</code></td>
 <td>The coin&#39;s symbol ID. It will be converted to <code>BTCUSD</code> on the server</td>
@@ -589,94 +597,91 @@ While this data can be received from other places. Should we go to the trouble o
 </tr>
 </tbody></table>
 <h2 id='ac-currency'>AC Currency</h2>
-<p>Candles returns the data by default in relation to USD. To request a pair, conjoin two symbols. Returned data is amalgamated over all exchanges we currently track.</p>
+<p>Candles returns the data by default in relation to USD. To request a pair, conjoin two symbols. Returned data is amalgamated over all exchanges we currently track by volume weighted averages. For instance an exchange that only trades 10% relative to another exchange, only accounts for 10% of the actual price of the amalgamated candle.</p>
 <h3 id='ac-currency-symbols'>AC Currency Symbols</h3>
 <blockquote>
 <p>Example Requests</p>
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="c1">// Pair is assumed to be USD</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/BTC"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/XRM"</span><span class="p">);</span>
-
-<span class="c1">// Specify pair exactly</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/ETHBTC"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/XRMZEC"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data_btc</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/btc"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data_xrm</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/xrm"</span><span class="p">);</span>
 
 </code></pre>
 <table><thead>
 <tr>
-<th>Symbol Name</th>
-<th>SymbolId</th>
+<th>Symbol</th>
+<th>Ticker</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Bitcoin</td>
-<td>BTC</td>
+<td>btc</td>
 </tr>
 <tr>
 <td>Bitcoin Cash</td>
-<td>BCH</td>
+<td>bch</td>
 </tr>
 <tr>
 <td>BitConnect</td>
-<td>BCC</td>
+<td>bcc</td>
 </tr>
 <tr>
 <td>Dash</td>
-<td>DASH</td>
+<td>dash</td>
 </tr>
 <tr>
 <td>Ethereum</td>
-<td>ETH</td>
+<td>eth</td>
 </tr>
 <tr>
 <td>Ethereum Classic</td>
-<td>ETC</td>
+<td>etc</td>
 </tr>
 <tr>
 <td>Litecoin</td>
-<td>LTC</td>
+<td>ltc</td>
 </tr>
 <tr>
 <td>Monero</td>
-<td>XMR</td>
+<td>xmr</td>
 </tr>
 <tr>
 <td>NEO</td>
-<td>NEO</td>
+<td>neo</td>
 </tr>
 <tr>
 <td>Nxt</td>
-<td>NXT</td>
+<td>nxt</td>
 </tr>
 <tr>
 <td>Ripple</td>
-<td>XRP</td>
+<td>xrp</td>
 </tr>
 <tr>
 <td>Stellar</td>
-<td>XLM</td>
+<td>xlm</td>
 </tr>
 <tr>
 <td>Zcash</td>
-<td>ZEC</td>
-</tr>
-<tr>
-<td>United States Dollars</td>
-<td>USD</td>
+<td>zec</td>
 </tr>
 </tbody></table>
 <h2 id='ac-frequency'>AC Frequency</h2>
 <blockquote>
 <p>Warning</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code>  <span class="kd">let</span> <span class="nx">requestedData</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/BTC/1h/period?start=2018-05-13:09:00:00:000&amp;end=2017-05-13:09:00:00:000"</span><span class="p">);</span>
+<pre class="highlight javascript tab-javascript"><code>  <span class="kd">let</span> <span class="nx">requestedData</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/btc/1h/period?start=2018-05-13:09:00:00:000&amp;end=2017-05-13:09:00:00:000"</span><span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>The above request returns this error</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"Errors"</span><span class="p">:</span><span class="s2">"405: The frequency was too small for the requested time period."</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w">   </span><span class="mi">405</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="w">  </span><span class="s2">"The interval was too small for the requested time period."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Candles returns the following time period of data based on frequency specified:</p>
@@ -716,110 +721,53 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 <aside class="warning">
   Requesting a time period longer than the frequencies time_period specified returns a 405 error.
 </aside>
-<h2 id='ac-returned-data'>AC Returned Data</h2><pre class="highlight javascript tab-javascript"><code>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/candles/BTC"</span><span class="p">);</span>
-
-</code></pre>
-<blockquote>
-<p>The above request returns the following data in JSON</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
-        </span><span class="s2">"BTCUSD"</span><span class="p">:{</span><span class="w">
-            </span><span class="s2">"lastPrice"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"high"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"low"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"previousClose"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"netChange"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"percentChange"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"bid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ask"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"volume"</span><span class="p">:</span><span class="s2">""</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h2 id='ac-returned-data'>AC Returned Data</h2>
 <table><thead>
 <tr>
 <th>Variable</th>
-<th>Default</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><code>symbol</code></td>
-<td><code>BTCUSD</code></td>
-<td><code>String</code></td>
-<td>The coin name in relation to USD.</td>
+<td><code>string</code></td>
+<td>The traded bair conjoined. &quot;btcusd&quot;</td>
 </tr>
 <tr>
 <td><code>name</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
-</tr>
-<tr>
-<td><code>lastPrice</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
+<td><code>string</code></td>
+<td>The asset in relation to it&#39;s traded pair. &quot;Bitcoin&quot; over &quot;United States Dollars&quot;</td>
 </tr>
 <tr>
 <td><code>open</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
+<td><code>number</code></td>
+<td>The opening price at the begining of the period</td>
 </tr>
 <tr>
 <td><code>high</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
+<td><code>number</code></td>
+<td>The high of the price for the period</td>
 </tr>
 <tr>
 <td><code>low</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
+<td><code>number</code></td>
+<td>The low of the price for the period</td>
 </tr>
 <tr>
-<td><code>previousClose</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
-</tr>
-<tr>
-<td><code>netChange</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
-</tr>
-<tr>
-<td><code>percentChange</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
-</tr>
-<tr>
-<td><code>bid</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
-</tr>
-<tr>
-<td><code>ask</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
+<td><code>close</code></td>
+<td><code>number</code></td>
+<td>The close at the end of the period</td>
 </tr>
 <tr>
 <td><code>volume</code></td>
-<td>``</td>
-<td>``</td>
-<td>desc</td>
+<td><code>number</code></td>
+<td>The volume during the period</td>
+</tr>
+<tr>
+<td><code>last_price</code></td>
+<td><code>number</code></td>
+<td>The last price before moving to the next period</td>
 </tr>
 </tbody></table>
 <h1 id='exchanges'>Exchanges</h1><pre class="highlight javascript tab-javascript"><code><span class="c1">// get exchange </span>
@@ -830,19 +778,31 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"exchanges"</span><span class="p">:[</span><span class="w">
+    </span><span class="s2">"exchanges"</span><span class="p">:[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">I</span><span class="w"> </span><span class="err">figure</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">calling</span><span class="w"> </span><span class="err">this</span><span class="p">,</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">don't</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">which</span><span class="w"> </span><span class="err">exchange</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">information</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">yet</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">probably</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">easy</span><span class="w"> </span><span class="err">way</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">loop</span><span class="w"> </span><span class="err">through</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">exchanges.</span><span class="w">
         </span><span class="p">{</span><span class="w">
-           </span><span class="s2">"exchangeName"</span><span class="p">:</span><span class="s2">"BitfinEx"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"exchangeId"</span><span class="p">:</span><span class="s2">"BFX"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Kraken"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"krak"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"volume"</span><span class="p">:</span><span class="s2">"243921.38"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"quote"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"timeStamp"</span><span class="p">:</span><span class="s2">"2018-05-03T20:31:24.737Z"</span><span class="w">
+           </span><span class="s2">"quote"</span><span class="p">:</span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"timeStamp"</span><span class="p">:</span><span class="s2">"2018-05-03T20:31:24.737Z"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"pairs"</span><span class="p">:[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">pairs</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">traded</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">exchange.</span><span class="w">
+           </span><span class="err">//</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//api.kraken.com/</span><span class="mi">0</span><span class="err">/public/AssetPairs</span><span class="w">
+           </span><span class="err">//</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">objects</span><span class="w"> </span><span class="err">under</span><span class="w"> </span><span class="err">`result`</span><span class="w">
+               </span><span class="s2">"bcheur"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"bchusd"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"bchxtbt"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"dasheur"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"dashusd"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"dashxbt"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"eoseth"</span><span class="p">,</span><span class="w">
+               </span><span class="err">...</span><span class="w">
+           </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="err">...</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Returns status and information about exchanges we track.</p>
+<p>Returns status and information about exchanges we track. Note in early development, this data will be pulled directly from barcharts</p>
 <h2 id='exch-endpoints'>EXCH Endpoints</h2>
 <table><thead>
 <tr>
@@ -855,7 +815,7 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 <td>Returns a list of exchanges supported by BCX Data &amp; their current status</td>
 </tr>
 <tr>
-<td><code>/exchanges/:exchangeId</code></td>
+<td><code>/exchanges/:exchange_id</code></td>
 <td>Returns information on a single exchange</td>
 </tr>
 </tbody></table>
@@ -869,10 +829,10 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 </tr>
 </thead><tbody>
 <tr>
-<td><code>exchangeId</code></td>
+<td><code>exchange_id</code></td>
 <td>NA</td>
 <td><code>String</code></td>
-<td>The exchangeId, that can be received from endpoint <code>/exchanges</code></td>
+<td>The exchange_id, that can be received from endpoint <code>/exchanges</code></td>
 </tr>
 </tbody></table>
 <h2 id='exch-returned-data'>EXCH Returned Data</h2>
@@ -886,12 +846,12 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 </tr>
 </thead><tbody>
 <tr>
-<td><code>exchangeName</code></td>
+<td><code>name</code></td>
 <td><code>string</code></td>
 <td>Name of the exchange</td>
 </tr>
 <tr>
-<td><code>exchangeId</code></td>
+<td><code>id</code></td>
 <td><code>string</code></td>
 <td>BCXData&#39;s id for the exchange</td>
 </tr>
@@ -903,47 +863,45 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 <tr>
 <td><code>quote</code></td>
 <td><code>string</code></td>
-<td>BCX Data currency ID of the asset used to quote a price</td>
+<td>BCX Data currency id of the asset used to quote a price</td>
 </tr>
 <tr>
 <td><code>timeStamp</code></td>
 <td><code>string</code></td>
-<td>Timestamp of the quoted volume. TODO: decide what timestamp to use.</td>
+<td>TimeStamp of the quoted volume.</td>
+</tr>
+<tr>
+<td><code>pairs</code></td>
+<td><code>array</code></td>
+<td>An array of tradeable pairs on that exchange</td>
 </tr>
 </tbody></table>
-<h1 id='exchange-candles'>Exchange Candles</h1><pre class="highlight javascript tab-javascript"><code><span class="c1">// get exchange </span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/candles"</span><span class="p">);</span>
+<h1 id='exchange-candles'>Exchange Candles</h1>
+<p>Returns candle data for the specified coin on a particular exchange.</p>
+
+<p>Authentication | <code>None</code></p>
+<h2 id='ec-endpoints'>EC Endpoints</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// get exchange </span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/btc"</span><span class="p">);</span>
 
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Return</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="err">candles</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="mi">1</span><span class="err">d</span><span class="w"> </span><span class="err">frequency</span><span class="w">
     </span><span class="s2">"exchanges"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"lastPrice"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"high"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"low"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"previousClose"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"netChange"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"percentChange"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"bid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ask"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"volume"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">6500.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">7500.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">92902.00</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="mi">29</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">candles</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Returns candle data for the specified coin on a particular exchange.</p>
-
-<p>Authentication | <code>None</code></p>
-
-<p>Endpoints*, Passed Parameters*, Variable Descriptions, Return parameters</p>
-<h2 id='ec-endpoints'>EC Endpoints</h2>
+</span></code></pre><h3 id='v1-endpoints'>v1 endpoints</h3>
 <table><thead>
 <tr>
 <th>Endpoint</th>
@@ -955,19 +913,15 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 <td>Returns a list of supported exchanges &amp; it&#39;s data. See <a href="#exchanges">exchanges</a> for more information</td>
 </tr>
 <tr>
-<td><code>/exchanges/:exchangeId/candles</code></td>
-<td>returns all candle data for the specified exchange in relation to the exchange base currency</td>
+<td><code>/exchanges/:exchange_id/candles/:bcx_symbol</code></td>
+<td>returns the defaults for a currency in relation to</td>
 </tr>
 <tr>
-<td><code>/exchanges/:exchangeId/candles/:currency</code></td>
-<td>returns the defaults for a currency</td>
-</tr>
-<tr>
-<td><code>/exchanges/:exchangeId/candles/:currency/:frequency</code></td>
+<td><code>/exchanges/:exchange_id/candles/:bcx_symbol/:frequency</code></td>
 <td>returns the max interval of data possible for a specified frequency size. See heading &quot;Interval&quot; for frequency to data size relationship.</td>
 </tr>
 <tr>
-<td><code>/exchanges/:exchangeId/candles/:currency/:frequency/</code><br><code>:interval?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></td>
+<td><code>/exchanges/:exchange_id/candles/:bcx_symbol/:frequency/</code><br><code>:interval?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></td>
 <td>Returns the interval of data at the frequency for the currency you specify.</td>
 </tr>
 </tbody></table>
@@ -981,16 +935,16 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 </tr>
 </thead><tbody>
 <tr>
-<td><code>exchangeId</code></td>
+<td><code>exchange_id</code></td>
 <td><code>null</code></td>
 <td><code>String</code></td>
-<td>The exchange you wish to find. Will error if <code>null</code>.</td>
+<td>The exchange you wish to find. Return error if <code>null</code></td>
 </tr>
 <tr>
-<td><code>currency</code></td>
+<td><code>bcx_symbol</code></td>
 <td><code>null</code></td>
 <td><code>String</code></td>
-<td>The coin name in relation to the exchange base currency.</td>
+<td>The BCX Data symbol used to identify a coin. <a href="#Coins">See Coins</a> for endpoints to get <code>bcx_symbol</code>s</td>
 </tr>
 <tr>
 <td><code>frequency</code></td>
@@ -1012,15 +966,15 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 </tr>
 </tbody></table>
 <h2 id='ec-currency'>EC Currency</h2>
-<p>Candles returns the data by default in relation to the exchanges <code>base currency</code>. To request a pair, conjoin two symbols. Returned data is amalgamated over all exchanges we currently track.</p>
+<p>Candles returns the data by default in relation to a <code>base_currency</code> typically <strong>USD</strong>. To request a pair, conjoin two symbols. Returned data is amalgamated over all exchanges we currently track. If the pair is not available on that exchange, an error will be returned.</p>
 <h3 id='ec-symbols'>EC Symbols</h3>
 <blockquote>
 <p>Example Requests</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/BTC"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/XRM"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/ETHBTC"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/XRMZEC"</span><span class="p">);</span>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/candles/btc"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/candles/xrm"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/candles/ethbtc"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/candles/xrmbcc"</span><span class="p">);</span>
 
 </code></pre>
 <table><thead>
@@ -1031,71 +985,76 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 </thead><tbody>
 <tr>
 <td>Bitcoin</td>
-<td>BTC</td>
+<td>btc</td>
 </tr>
 <tr>
 <td>Bitcoin Cash</td>
-<td>BCH</td>
+<td>bch</td>
 </tr>
 <tr>
 <td>BitConnect</td>
-<td>BCC</td>
+<td>bcc</td>
 </tr>
 <tr>
 <td>Dash</td>
-<td>DASH</td>
+<td>dash</td>
 </tr>
 <tr>
 <td>Ethereum</td>
-<td>ETH</td>
+<td>eth</td>
 </tr>
 <tr>
 <td>Ethereum Classic</td>
-<td>ETC</td>
+<td>etc</td>
 </tr>
 <tr>
 <td>Litecoin</td>
-<td>LTC</td>
+<td>ltc</td>
 </tr>
 <tr>
 <td>Monero</td>
-<td>XMR</td>
+<td>xmr</td>
 </tr>
 <tr>
 <td>NEO</td>
-<td>NEO</td>
+<td>neo</td>
 </tr>
 <tr>
 <td>Nxt</td>
-<td>NXT</td>
+<td>nxt</td>
 </tr>
 <tr>
 <td>Ripple</td>
-<td>XRP</td>
+<td>xrp</td>
 </tr>
 <tr>
 <td>Stellar</td>
-<td>XLM</td>
+<td>xlm</td>
 </tr>
 <tr>
 <td>Zcash</td>
-<td>ZEC</td>
+<td>zec</td>
 </tr>
 </tbody></table>
 <h2 id='ec-frequency'>EC Frequency</h2>
 <blockquote>
 <p>Warning</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code>  <span class="kd">let</span> <span class="nx">requestedData</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/BTC/1h/interval?start=2018-05-13:09:00:00:000&amp;end=2017-05-13:09:00:00:000"</span><span class="p">);</span>
+<pre class="highlight javascript tab-javascript"><code>  <span class="kd">let</span> <span class="nx">requestedData</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/btc/1h/interval?start=2018-05-13:09:00:00:000&amp;end=2017-05-13:09:00:00:000"</span><span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>The above request returns this error</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"Errors"</span><span class="p">:</span><span class="s2">"405: The interval was too small for the requested time period."</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="mi">405</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"The interval was too small for the requested time period."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Candles returns the following date intervals based on size requests:</p>
+<p>Candles returns the following date intervals based on size requests. These are also the maximum frequency a user can request for a given time period. You can always request a smaller frequency example: 30 min for anything less than 14 days, but you can not request 30 min frequency for a 14 day or greater interval.</p>
 
 <table><thead>
 <tr>
@@ -1130,30 +1089,163 @@ Requesting `https://api.bcxdata.com/v1/BTC/1d` returns the candle data since inc
 </aside>
 
 <aside class="warning">
-  Requesting a time interval longer than the frequency max_return_data specified returns a 405 error.
+Requesting a time interval longer than the frequency max_return_data specified returns a 405 error.
 </aside>
-<h2 id='ec-returned-data'>EC Returned Data</h2><h1 id='coins'>Coins</h1><pre class="highlight javascript tab-javascript"><code><span class="c1">// get coins </span>
+<h2 id='ec-returned-data'>EC Returned Data</h2><h1 id='coins'>Coins</h1>
+<p>Returns status and information about coins.</p>
+<h2 id='coin-endpoints'>Coin Endpoints</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// get coins </span>
 <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/coins"</span><span class="p">);</span>
-
-</code></pre><pre class="highlight python tab-python"><code><span class="c"># get coins </span>
-<span class="n">let</span> <span class="n">data</span> <span class="o">=</span> <span class="n">requester</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.bcxdata.com/v1/coins"</span><span class="p">);</span>
 
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns JSON structured like the data below:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"coins"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-           </span><span class="s2">"coinId"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"coinName"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w">                 </span><span class="s2">"Bitcoin"</span><span class="p">,</span><span class="w">  
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w">                   </span><span class="s2">"bitcoin"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">BCX</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">coin</span><span class="w">
+            </span><span class="s2">"bcx_symbol"</span><span class="p">:</span><span class="w">           </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">BCX</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">symbol.</span><span class="w"> </span><span class="err">Used</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">requesting</span><span class="w"> </span><span class="err">indicies</span><span class="w">
+            </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w">        </span><span class="s2">"usd"</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">prices</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">specified</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">base</span><span class="w"> </span><span class="err">currency</span><span class="w">
+            </span><span class="s2">"circulating_supply"</span><span class="p">:</span><span class="w">   </span><span class="mf">17069050.0</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">coins</span><span class="w"> </span><span class="err">released</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="err">conversion</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">base</span><span class="w"> </span><span class="err">currency</span><span class="w">
+            </span><span class="s2">"bcx_score"</span><span class="p">:</span><span class="w">            </span><span class="mf">78.98</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">max</span><span class="w"> </span><span class="mi">100</span><span class="w">
+            </span><span class="s2">"bcx_recomend"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">our</span><span class="w"> </span><span class="err">algo</span><span class="w">
+
+            </span><span class="s2">"momentum_50"</span><span class="w"> </span><span class="p">:</span><span class="w">         </span><span class="mf">18.2939</span><span class="p">,</span><span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="err">day</span><span class="w"> </span><span class="err">momentum</span><span class="w">
+            </span><span class="s2">"momentum_25"</span><span class="w"> </span><span class="p">:</span><span class="w">         </span><span class="mf">24.8719</span><span class="p">,</span><span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="err">day</span><span class="w"> </span><span class="err">momentum</span><span class="w">
+
+            </span><span class="s2">"tcmi"</span><span class="w"> </span><span class="p">:</span><span class="w">                </span><span class="mf">82.302</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">TCMI</span><span class="w"> </span><span class="err">max</span><span class="w"> </span><span class="mi">100</span><span class="w">
+
+            </span><span class="s2">"all_time_high"</span><span class="w"> </span><span class="p">:</span><span class="w">       </span><span class="mf">25000.39</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"all_time_high_date"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"2018-01-03T11:23:59.371Z"</span><span class="p">,</span><span class="w">
+
+            </span><span class="s2">"market_cap"</span><span class="w"> </span><span class="p">:</span><span class="w">          </span><span class="mf">77333111.34</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">base</span><span class="w"> </span><span class="err">currency</span><span class="w">
+            </span><span class="s2">"market_share"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="mf">33.32</span><span class="p">,</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">percent</span><span class="w">
+
+            </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w">            </span><span class="s2">"https://bcxdata.com/coins/images/thumb/bitcoin.png"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"small"</span><span class="p">:</span><span class="w">            </span><span class="s2">"https://bcxdata.com/coins/images/small/bitcoin.png"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+
+            </span><span class="s2">"symbols"</span><span class="p">:[</span><span class="w">                         </span><span class="err">//</span><span class="w"> </span><span class="err">exchanges</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">track</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"exchange"</span><span class="p">:</span><span class="s2">"bitfinex"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"bfx"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"btc"</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"exchange"</span><span class="p">:</span><span class="s2">"Kraken"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"krk"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"bit"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">...</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+
+            </span><span class="s2">"market_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"current_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">9882.61572096458</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">8789.61572096458</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">10290.03902323298</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">9700.03817228985</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">7391.10689865095</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">48026.0936377929</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"price_change"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">42.83</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">39.19</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">140.39</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">193.92</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">2930.32</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"inception"</span><span class="p">:</span><span class="w"> </span><span class="mf">29103920.39</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"price_percent_change"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.34</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"48h"</span><span class="p">:</span><span class="mf">31.395</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.395</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">121.395</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">231.395</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"inception"</span><span class="p">:</span><span class="w"> </span><span class="mf">1039.59</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"market_cap"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">168686733397.9261</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">8789.61572096458</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mi">17069037</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">165570310464.2278</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">222770839.3036304</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">109423370141.29701</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">1001761179709.8</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"total_volume"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">2166036160.2693434</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">6173502427.778992</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mf">6173502427.778992</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">219176.4024249574</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">2126019469.9872484</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">1619956219.9845994</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">10526186426.055582</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"volume_change"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">compared</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">base_currency</span><span class="w">
+                    </span><span class="s2">"24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.34</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">31.395</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.395</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">121.395</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">231.395</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"inception"</span><span class="p">:</span><span class="w"> </span><span class="mf">1039.59</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                           </span><span class="err">//</span><span class="w"> </span><span class="mi">24</span><span class="err">h</span><span class="w"> </span><span class="err">high</span><span class="w">
+                    </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">10109.68553964355</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mf">28814.001062341806</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">28814.001062341806</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.022976692111712</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">9922.912962846409</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">7560.930086226004</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">49129.574404636725</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                           </span><span class="err">//</span><span class="w"> </span><span class="mi">24</span><span class="err">h</span><span class="w"> </span><span class="err">low</span><span class="w">
+                    </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">9567.863567088827</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mf">27269.733554557155</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">27269.733554557155</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9681509265600554</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">9391.100944170325</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">7155.706992233335</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">46496.50705448918</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"community_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"facebook_likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">37863</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"twitter_followers"</span><span class="p">:</span><span class="w"> </span><span class="mi">55785</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"reddit_average_posts_48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.313</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"reddit_average_comments_48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">191.969</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"reddit_subscribers"</span><span class="p">:</span><span class="w"> </span><span class="mi">847008</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"reddit_accounts_active_48h"</span><span class="p">:</span><span class="w"> </span><span class="mi">8234</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"developer_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"forks"</span><span class="p">:</span><span class="w"> </span><span class="mi">19273</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"stars"</span><span class="p">:</span><span class="w"> </span><span class="mi">31999</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"subscribers"</span><span class="p">:</span><span class="w"> </span><span class="mi">3319</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_issues"</span><span class="p">:</span><span class="w"> </span><span class="mi">3955</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"closed_issues"</span><span class="p">:</span><span class="w"> </span><span class="mi">3418</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"pull_requests_merged"</span><span class="p">:</span><span class="w"> </span><span class="mi">5488</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"pull_request_contributors"</span><span class="p">:</span><span class="w"> </span><span class="mi">503</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"commit_count_4_weeks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"public_interest_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"alexa_rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">11135</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"bing_matches"</span><span class="p">:</span><span class="w"> </span><span class="mi">32600000</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+
         </span><span class="p">},</span><span class="w">
         </span><span class="err">...</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Returns status and information about coins.</p>
-<h2 id='coin-endpoints'>Coin Endpoints</h2>
+<aside class="information">
+    <strong>TODO:</strong> 
+    <ol>
+        <li>Determine if <code>/coins</code> returns too much or too little data for our home page.</li>
+    </ol>
+</aside>
+<h3 id='v1'>v1</h3>
 <table><thead>
 <tr>
 <th>Endpoint</th>
@@ -1162,31 +1254,47 @@ Requesting `https://api.bcxdata.com/v1/BTC/1d` returns the candle data since inc
 </thead><tbody>
 <tr>
 <td><code>/coins</code></td>
-<td>Returns a list of coins with summary data attached. Useful for Dashboard views.</td>
+<td>Returns a list of coins, their ID &amp; summary data.</td>
 </tr>
 <tr>
-<td><code>/coins/:coinId</code></td>
+<td><code>/coins/:bcx_symbol</code></td>
 <td>All data for a particular coin, dev, community, news, cheatsheet.</td>
 </tr>
+</tbody></table>
+<h3 id='v1-if-easy-enough'>v1 if easy enough</h3>
+<table><thead>
 <tr>
-<td><code>/coins/:coinId/developer</code></td>
+<th>Endpoint</th>
+<th>Return</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>/coins/:bcx_symbol/developer</code></td>
 <td>all dev data on github: stars, forks, branches, issues etc...</td>
 </tr>
 <tr>
-<td><code>/coins/:coinId/community</code></td>
+<td><code>/coins/:bcx_symbol/community</code></td>
 <td>all community data: facebook, youtube, twitter, reddit, reddit hot issues, recent news etc...</td>
 </tr>
 <tr>
-<td><code>/coins/:coinId/news</code></td>
-<td>news on a particular coin # of posts in the past 24h</td>
+<td><code>/coins/:bcx_symbol/cheatsheet</code></td>
+<td>Instead of getting the top 10, return all cheat sheet data for the coin</td>
 </tr>
 <tr>
-<td><code>/coins/:coinId/cheat</code></td>
-<td>cheat sheet data for the coin</td>
+<td><code>/coins/:bcx_symbol/tcmi</code></td>
+<td>Total Crypto Market Index Ranking.</td>
 </tr>
+</tbody></table>
+<h3 id='v2'>v2</h3>
+<table><thead>
 <tr>
-<td><code>/coins/:coinId/tcmi</code></td>
-<td>Total Crypto Market Index Ranking</td>
+<th>Endpoint</th>
+<th>Return</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>/coins/:bcx_symbol[:base_currency]</code></td>
+<td>Specify the base currency for a symbol. <em>While this endpoint may be easily created will it be difficult to process the data?</em></td>
 </tr>
 </tbody></table>
 <h2 id='coin-passed-parameters'>Coin Passed Parameters</h2>
@@ -1199,17 +1307,242 @@ Requesting `https://api.bcxdata.com/v1/BTC/1d` returns the candle data since inc
 </tr>
 </thead><tbody>
 <tr>
-<td><code>coinId</code></td>
+<td><code>bcx_symbol</code></td>
 <td><code>null</code></td>
 <td><code>String</code></td>
-<td>The coin you wish to find</td>
+<td>BCX Data symbol. Used when requesting indicies</td>
 </tr>
 </tbody></table>
-<h2 id='coin-returned-data'>Coin Returned Data</h2>
-<p>what will we return for JSON format? What does each category mean?</p>
+<h2 id='coin-returned-data'>Coin Returned Data</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// get coins </span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/coins/btc"</span><span class="p">);</span>
 
-<!-- TODO LIST EVERYTHING WE RETURN FOR A COIN -->
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">       
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w">                 </span><span class="s2">"Bitcoin"</span><span class="p">,</span><span class="w">  
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w">                   </span><span class="s2">"bitcoin"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">BCX</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">coin</span><span class="w">
+    </span><span class="s2">"bcx_symbol"</span><span class="p">:</span><span class="w">           </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">BCX</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">symbol.</span><span class="w"> </span><span class="err">Used</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">requesting</span><span class="w"> </span><span class="err">indicies</span><span class="w">
+    </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w">        </span><span class="s2">"usd"</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">prices</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">specified</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">base</span><span class="w"> </span><span class="err">currency</span><span class="w">
+    </span><span class="s2">"circulating_supply"</span><span class="p">:</span><span class="w">   </span><span class="mf">17069050.0</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">coins</span><span class="w"> </span><span class="err">released</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="err">conversion</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">base</span><span class="w"> </span><span class="err">currency</span><span class="w">
+    </span><span class="s2">"bcx_score"</span><span class="p">:</span><span class="w">            </span><span class="mf">78.98</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">max</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="s2">"bcx_recomend"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">our</span><span class="w"> </span><span class="err">algo</span><span class="w">
 
+    </span><span class="s2">"momentum_50"</span><span class="w"> </span><span class="p">:</span><span class="w">         </span><span class="mf">18.2939</span><span class="p">,</span><span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="err">day</span><span class="w"> </span><span class="err">momentum</span><span class="w">
+    </span><span class="s2">"momentum_25"</span><span class="w"> </span><span class="p">:</span><span class="w">         </span><span class="mf">24.8719</span><span class="p">,</span><span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="err">day</span><span class="w"> </span><span class="err">momentum</span><span class="w">
+
+    </span><span class="s2">"tcmi"</span><span class="w"> </span><span class="p">:</span><span class="w">                </span><span class="mf">82.302</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">TCMI</span><span class="w"> </span><span class="err">max</span><span class="w"> </span><span class="mi">100</span><span class="w">
+
+    </span><span class="s2">"all_time_high"</span><span class="w"> </span><span class="p">:</span><span class="w">       </span><span class="mf">25000.39</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"all_time_high_date"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"2018-01-03T11:23:59.371Z"</span><span class="p">,</span><span class="w">
+
+    </span><span class="s2">"market_cap"</span><span class="w"> </span><span class="p">:</span><span class="w">          </span><span class="mf">77333111.34</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">base</span><span class="w"> </span><span class="err">currency</span><span class="w">
+    </span><span class="s2">"market_share"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="mf">33.32</span><span class="p">,</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">percent</span><span class="w">
+
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w">            </span><span class="s2">"https://bcxdata.com/coins/images/thumb/bitcoin.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"small"</span><span class="p">:</span><span class="w">            </span><span class="s2">"https://bcxdata.com/coins/images/small/bitcoin.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"white_paper_url"</span><span class="p">:</span><span class="w">      </span><span class="s2">"https://bcxdata.com/coins/paper/bitcoin_whitepaper.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"inception_date"</span><span class="p">:</span><span class="w">       </span><span class="s2">"2008-08-18T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"website"</span><span class="p">:</span><span class="w">              </span><span class="s2">"https://bitcoin.org/en/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"opensource_url"</span><span class="p">:</span><span class="w">       </span><span class="s2">"https://github.com/bitcoin/bitcoin"</span><span class="p">,</span><span class="w">
+
+    </span><span class="s2">"cheat_sheet"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"fundamental"</span><span class="p">,</span><span class="w">     </span><span class="err">//</span><span class="w"> </span><span class="err">determines</span><span class="w"> </span><span class="err">what</span><span class="w"> </span><span class="err">template</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">display</span><span class="w">
+        </span><span class="s2">"date"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"2018-06-01T11:23:59.371Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w">       </span><span class="mf">243019.2409</span><span class="p">,</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">price</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">relation</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">base_currency</span><span class="w">   
+        </span><span class="s2">"volume"</span><span class="w"> </span><span class="p">:</span><span class="w">      </span><span class="mf">49283091.392</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"momentum"</span><span class="w"> </span><span class="p">:</span><span class="w">    </span><span class="mf">18.3920</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"A new all time high was set less than 3 days ago."</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"general"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"2017-01-3T11:23:59.371Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w">       </span><span class="mf">243019.2409</span><span class="p">,</span><span class="w">   
+        </span><span class="s2">"volume"</span><span class="w"> </span><span class="p">:</span><span class="w">      </span><span class="mf">49283091.392</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"momentum"</span><span class="w"> </span><span class="p">:</span><span class="w">    </span><span class="mf">18.3920</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"More business are accepting bitcoin over other cryptocurrencies, with reduced fees, and quicker resolution times. It is a preffered and trusted coin for trading with small businesses."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w">          </span><span class="s2">"https://www.cbc.ca/bitcoin-accepted"</span><span class="w">
+    </span><span class="p">},{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"2018-06-19T11:23:59.371Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w">       </span><span class="mf">243019.2409</span><span class="p">,</span><span class="w">   
+        </span><span class="s2">"volume"</span><span class="w"> </span><span class="p">:</span><span class="w">      </span><span class="mf">49283091.392</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"momentum"</span><span class="w"> </span><span class="p">:</span><span class="w">    </span><span class="mf">18.3920</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"SEC is clamping down on other crpyto currencies but not Bitcoin due to the annonominity of it's founders."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w">          </span><span class="s2">"https://www.sec.ca/bitcoin-anon"</span><span class="w">
+    </span><span class="p">},{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"fork"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="w"> </span><span class="p">:</span><span class="w">        </span><span class="s2">"2017-08-23T11:23:59.371Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w">       </span><span class="mf">243019.2409</span><span class="p">,</span><span class="w">   
+        </span><span class="s2">"volume"</span><span class="w"> </span><span class="p">:</span><span class="w">      </span><span class="mf">49283091.392</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"momentum"</span><span class="w"> </span><span class="p">:</span><span class="w">    </span><span class="mf">18.3920</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w">  </span><span class="s2">"SegWit (short for Segregated Witness) is a protocol upgrade that changes the way data is stored. This cointroversial upgrage is still heavily debated in the community. As of today, over 80% of transactions are now processed using this new procedure."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w">          </span><span class="s2">"https://www.coindesk.com/information/what-is-segwit/"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="s2">"cheat sheet"</span><span class="w"> </span><span class="err">items</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+
+    </span><span class="s2">"asset_strong_coorleation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">top</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="err">strongly</span><span class="w"> </span><span class="err">coorelated</span><span class="w"> </span><span class="err">assets</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"asset"</span><span class="p">:</span><span class="s2">"eth"</span><span class="p">,</span><span class="w">               </span><span class="err">//</span><span class="w"> </span><span class="err">bcx_symbol</span><span class="w">
+            </span><span class="s2">"coorleation"</span><span class="p">:</span><span class="mf">85.32234</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">percent</span><span class="w"> </span><span class="err">coorleated</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"asset"</span><span class="p">:</span><span class="s2">"iota"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coorleation"</span><span class="p">:</span><span class="mf">81.30324</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"asset"</span><span class="p">:</span><span class="s2">"eos"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coorleation"</span><span class="p">:</span><span class="mf">78.32344</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+
+    </span><span class="s2">"asset_weak_coorelation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">top</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="err">weakly</span><span class="w"> </span><span class="err">coorelated</span><span class="w"> </span><span class="err">assets</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"asset"</span><span class="p">:</span><span class="s2">"mkd"</span><span class="p">,</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">bcx_symbol</span><span class="w">
+            </span><span class="s2">"coorleation"</span><span class="p">:</span><span class="mf">12.2942</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">percent</span><span class="w"> </span><span class="err">coorleated</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"asset"</span><span class="p">:</span><span class="s2">"lyt"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coorleation"</span><span class="p">:</span><span class="mf">14.3902</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"asset"</span><span class="p">:</span><span class="s2">"thm"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coorleation"</span><span class="p">:</span><span class="mf">24.3029</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+
+    </span><span class="s2">"symbols"</span><span class="p">:[</span><span class="w">                         </span><span class="err">//</span><span class="w"> </span><span class="err">exchanges</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">track</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"exchange"</span><span class="p">:</span><span class="s2">"bitfinex"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"bfx"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"btc"</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"exchange"</span><span class="p">:</span><span class="s2">"Kraken"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"krk"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"bit"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"market_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"current_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">9882.61572096458</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">8789.61572096458</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">10290.03902323298</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">9700.03817228985</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">7391.10689865095</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">48026.0936377929</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"price_change"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">42.83</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">39.19</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">140.39</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">193.92</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">2930.32</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inception"</span><span class="p">:</span><span class="w"> </span><span class="mf">29103920.39</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"price_percent_change"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.34</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"48h"</span><span class="p">:</span><span class="mf">31.395</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.395</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">121.395</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">231.395</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inception"</span><span class="p">:</span><span class="w"> </span><span class="mf">1039.59</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"market_cap"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">168686733397.9261</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">8789.61572096458</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mi">17069037</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">165570310464.2278</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">222770839.3036304</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">109423370141.29701</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">1001761179709.8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"total_volume"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">2166036160.2693434</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">6173502427.778992</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mf">6173502427.778992</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">219176.4024249574</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">2126019469.9872484</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">1619956219.9845994</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">10526186426.055582</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"volume_change"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">compared</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">base_currency</span><span class="w">
+            </span><span class="s2">"24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.34</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">31.395</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.395</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">121.395</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">231.395</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inception"</span><span class="p">:</span><span class="w"> </span><span class="mf">1039.59</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                           </span><span class="err">//</span><span class="w"> </span><span class="mi">24</span><span class="err">h</span><span class="w"> </span><span class="err">high</span><span class="w">
+            </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">10109.68553964355</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mf">28814.001062341806</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">28814.001062341806</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.022976692111712</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">9922.912962846409</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">7560.930086226004</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">49129.574404636725</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                           </span><span class="err">//</span><span class="w"> </span><span class="mi">24</span><span class="err">h</span><span class="w"> </span><span class="err">low</span><span class="w">
+            </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">9567.863567088827</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mf">27269.733554557155</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="mf">27269.733554557155</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cad"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9681509265600554</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">9391.100944170325</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="mf">7155.706992233335</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hkd"</span><span class="p">:</span><span class="w"> </span><span class="mf">46496.50705448918</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+     </span><span class="s2">"community_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"facebook_likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">37863</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"twitter_followers"</span><span class="p">:</span><span class="w"> </span><span class="mi">55785</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reddit_average_posts_48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.313</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reddit_average_comments_48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">191.969</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reddit_subscribers"</span><span class="p">:</span><span class="w"> </span><span class="mi">847008</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reddit_accounts_active_48h"</span><span class="p">:</span><span class="w"> </span><span class="mi">8234</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"developer_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"forks"</span><span class="p">:</span><span class="w"> </span><span class="mi">19273</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"stars"</span><span class="p">:</span><span class="w"> </span><span class="mi">31999</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subscribers"</span><span class="p">:</span><span class="w"> </span><span class="mi">3319</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_issues"</span><span class="p">:</span><span class="w"> </span><span class="mi">3955</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"closed_issues"</span><span class="p">:</span><span class="w"> </span><span class="mi">3418</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pull_requests_merged"</span><span class="p">:</span><span class="w"> </span><span class="mi">5488</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pull_request_contributors"</span><span class="p">:</span><span class="w"> </span><span class="mi">503</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commit_count_4_weeks"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"public_interest_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"alexa_rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">11135</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bing_matches"</span><span class="p">:</span><span class="w"> </span><span class="mi">32600000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Here</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">Amazon</span><span class="w"> </span><span class="err">Turk</span><span class="w"> </span><span class="err">fill</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">blanks</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Amazon</span><span class="w"> </span><span class="err">Turk</span><span class="w"> </span><span class="err">Data</span><span class="p">:</span><span class="w"> </span><span class="err">description</span><span class="p">,</span><span class="w"> </span><span class="err">supply_generated</span><span class="p">,</span><span class="w"> </span><span class="err">used_for</span><span class="p">,</span><span class="w"> </span><span class="err">proof</span><span class="p">,</span><span class="w"> </span><span class="err">references</span><span class="p">,</span><span class="w"> </span><span class="err">website</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bitcoin is the first successful internet money based on peer-to-peer technology; whereby no central bank or authority is involved in the transaction and production of the Bitcoin currency. It was created by an anonymous individual/group under the name, Satoshi Nakamoto. The source code is available publicly as an open source project, anybody can look at it and be part of the developmental process.</span><span class="se">\r\n\r\n</span><span class="s2">Bitcoin is changing the way we see money as we speak. It is a decentralized peer-to-peer internet currency making mobile payment easy, very low transaction fees, protects your identity, and it works anywhere all the time with no banking hours.</span><span class="se">\r\n\r\n</span><span class="s2">As of the current design, there will only be 21 million Bitcoin ever created, thus making it a deflationary currency unlike fiat currencies. Bitcoin uses the SHA-256 hashing algorithm with an average transaction confirmation time of 10 minutes. Miners today are mining Bitcoin using ASIC chip dedicated to only mining Bitcoin, and the hash rate has shot up to peta hashes.</span><span class="se">\r\n\r\n</span><span class="s2">Being the first successful online cryptography currency, Bitcoin has inspired other alternative currencies such as Litecoin, Peercoin, Primecoin, and so on."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"French localization of translated description"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"used_for"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"en"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"supply_generated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Through mining. In addition to rewards from people funding their transactions. Miners generate new bitcoin for every block that is added to the transaction based on difficulty of hash."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"french localization of generationg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"proof"</span><span class="p">:</span><span class="s2">"POW or Proof of Work"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"references"</span><span class="p">:[{</span><span class="w">
+        </span><span class="s2">"nice"</span><span class="p">:</span><span class="s2">"Wikipedia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://en.wikipedia.org/wiki/Bitcoin"</span><span class="w">
+    </span><span class="p">},{</span><span class="w">
+        </span><span class="s2">"nice"</span><span class="p">:</span><span class="s2">"Bitcoin Wikipedia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://en.bitcoin.it/wiki/Main_Page"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <table><thead>
 <tr>
 <th>Variable</th>
@@ -1218,92 +1551,269 @@ Requesting `https://api.bcxdata.com/v1/BTC/1d` returns the candle data since inc
 </tr>
 </thead><tbody>
 <tr>
-<td><code>coinName</code></td>
+<td><code>name</code></td>
 <td><code>string</code></td>
-<td>Name of the coin</td>
+<td>Name of the coin used in nice display</td>
 </tr>
 <tr>
-<td><code>coinId</code></td>
+<td><code>id</code></td>
 <td><code>string</code></td>
-<td>BCXData&#39;s id for the coin</td>
+<td>BCX Data id</td>
 </tr>
 <tr>
-<td><code>developer</code></td>
+<td><code>bcx_symbol</code></td>
 <td><code>string</code></td>
-<td>string</td>
+<td>BCX Data symbol for the coin. Made from the most common symbols found on exchanges. Used when requesting indicies.</td>
 </tr>
 <tr>
-<td><code>stars</code></td>
+<td><code>base_currency</code></td>
 <td><code>string</code></td>
-<td>string</td>
+<td>Default to USD. What price each coin is stated in for ATH, curculating_supply, cheat_sheet.price,</td>
+</tr>
+<tr>
+<td><code>circulating_supply</code></td>
+<td><code>number</code></td>
+<td>How many coins are out there</td>
+</tr>
+<tr>
+<td><code>bcx_score</code></td>
+<td><code>number</code></td>
+<td>A figure that sums up our score of the coin. TODO: determine formula that makes up this number</td>
+</tr>
+<tr>
+<td><code>bcx_recomend</code></td>
+<td><code>enum</code></td>
+<td>[<code>buy</code>,<code>hold</code>,<code>sell</code>] A reccomendation to buy/hold/sell without being legally responsible for advice given. TODO: determine formula that makes this up.</td>
+</tr>
+<tr>
+<td><code>momentum_50</code></td>
+<td><code>number</code></td>
+<td>50 day moving momentum. In relation to all the other coins, does this one have momentum.</td>
+</tr>
+<tr>
+<td><code>momentum_25</code></td>
+<td><code>number</code></td>
+<td>25 day moving momentum. In relation to all the other coins, does this one have momentum.</td>
 </tr>
 <tr>
 <td><code>tcmi</code></td>
-<td><code>string</code></td>
-<td>% ranking of how this asset is doing with a total crypto marekt index</td>
+<td><code>number</code></td>
+<td>Total Crypto Momentum Index. How is this coin doing in relation to the rest of the coins we are trading? In addition to momentum on price the <strong>Total</strong> in <strong>TCMI</strong> means we pull in other factors as well such as <strong>developer interest momentum</strong> and <strong>community interest momentum</strong>.</td>
 </tr>
 <tr>
-<td><code>nodes</code></td>
-<td><code>string</code></td>
-<td>number of nodes that this currency currently has</td>
+<td><code>all_time_high</code></td>
+<td><code>number</code></td>
+<td>A price in relation to the base_currency that was the highest ever offered for this coin.</td>
 </tr>
 <tr>
-<td><code>valid</code></td>
-<td><code>string</code></td>
-<td>POS, or POW, or other. Proof of work, Proof of stake</td>
+<td><code>all_time_high_date</code></td>
+<td><code>date</code></td>
+<td>A date specifying was the all time high purchased</td>
 </tr>
 <tr>
-<td><code>string</code></td>
-<td><code>string</code></td>
-<td>string</td>
+<td><code>market_cap</code></td>
+<td><code>number</code></td>
+<td>Shown in the base currency</td>
 </tr>
 <tr>
-<td><code>string</code></td>
-<td><code>string</code></td>
-<td>string</td>
+<td><code>market_share</code></td>
+<td><code>number</code></td>
+<td>Percent. of the market that this coin occupies. TODO: Determine if this will be for all coins or only the ones we track, and if it is for all coins, how do we figure out market share?</td>
 </tr>
 <tr>
-<td><code>string</code></td>
-<td><code>string</code></td>
-<td>string</td>
+<td><code>images</code></td>
+<td><code>array</code></td>
+<td>An array containing the links to each coin&#39;s image.</td>
 </tr>
 <tr>
+<td><code>white_paper_url</code></td>
 <td><code>string</code></td>
-<td><code>string</code></td>
-<td>string</td>
+<td>the url to the white paper</td>
 </tr>
 <tr>
+<td><code>inception_date</code></td>
+<td><code>date</code></td>
+<td>the date the coin was first launched</td>
+</tr>
+<tr>
+<td><code>website</code></td>
 <td><code>string</code></td>
+<td>The url to the community website, or companies website running the coin.</td>
+</tr>
+<tr>
+<td><code>opensource_url</code></td>
 <td><code>string</code></td>
-<td>string</td>
+<td>the url to the main repository where the source code for the coin is kept</td>
+</tr>
+<tr>
+<td><code>cheat_sheet</code></td>
+<td><code>array</code></td>
+<td>the array containing objects for our cheatsheet. We return up to 10 objects here with a ratio of 25:25:25:25 for the four types of cheat sheet&#39;s. <code>fundamental</code>, <code>general</code>, <code>fork</code>, <code>news</code>. See Cheat Sheet for more information.</td>
+</tr>
+<tr>
+<td><code>cheat_sheet.type</code></td>
+<td><code>enum</code></td>
+<td><code>fundamental</code>, <code>general</code>, <code>fork</code>, <code>news</code></td>
+</tr>
+<tr>
+<td><code>cheat_sheet.date</code></td>
+<td><code>date</code></td>
+<td>The date the event occured</td>
+</tr>
+<tr>
+<td><code>cheat_sheet.price</code></td>
+<td><code>number</code></td>
+<td>The price on the date in the base_currency</td>
+</tr>
+<tr>
+<td><code>cheat_sheet.volume</code></td>
+<td><code>number</code></td>
+<td>The volume traded on that day</td>
+</tr>
+<tr>
+<td><code>cheat_sheet.momentum</code></td>
+<td><code>number</code></td>
+<td>The momentum on that day.</td>
+</tr>
+<tr>
+<td><code>cheat_sheet.description</code></td>
+<td><code>string</code></td>
+<td>The description of the event</td>
+</tr>
+<tr>
+<td><code>cheat_sheet.url</code></td>
+<td><code>string</code></td>
+<td>The url pointing to an outside reference. Not present on <code>fundamental</code></td>
+</tr>
+<tr>
+<td><code>asset_strong_coorleation</code></td>
+<td><code>array</code></td>
+<td>An array containing the top 10 most strongly coorelated data points with this coin. Check <code>asset_strong_coorleation.asset</code> &amp; <code>asset_strong_coorleation.coorleation</code> for details. This is refreshed daily on the server.</td>
+</tr>
+<tr>
+<td><code>asset_weak_coorelation</code></td>
+<td><code>array</code></td>
+<td>An array containing the top 10 most weakly coorelated data points with this coin. Check <code>asset_weak_coorelation.asset</code> &amp; <code>asset_weak_coorelation.coorleation</code> for details. This is refreshed daily on the server.</td>
+</tr>
+<tr>
+<td><code>symbols</code></td>
+<td><code>array</code></td>
+<td>An array of exchanges, and what this coin&#39;s ticker/symbol is on that exchange</td>
+</tr>
+<tr>
+<td><code>symbols.exchange</code></td>
+<td><code>string</code></td>
+<td>The nice name of the exchange</td>
+</tr>
+<tr>
+<td><code>symbols.id</code></td>
+<td><code>string</code></td>
+<td>An id that the exchange has given itself. Use this in <code>/exchanges/:exchangeId</code></td>
+</tr>
+<tr>
+<td><code>symbols.symbol</code></td>
+<td><code>string</code></td>
+<td>the symbol that this coin is trading under on this exchange</td>
+</tr>
+<tr>
+<td><code>market_data</code></td>
+<td><code>array</code></td>
+<td>An array containing <code>current_price</code>, <code>price_change</code>, <code>price_percent_change</code>, <code>market_cap</code>, <code>total_volume</code>, <code>volume_change</code>, <code>high</code>, <code>low</code></td>
+</tr>
+<tr>
+<td><code>market_data.current_price</code></td>
+<td><code>array</code></td>
+<td>An array containing the current price in different base currencies. This comes from a volume weighted amalgamation accross the different exchanges.</td>
+</tr>
+<tr>
+<td><code>market_data.price_change</code></td>
+<td><code>array</code></td>
+<td>An array containing the absolute price change in <code>base_currency</code>. This comes from: a volume weighted amalgamation of different exchanges. Looks up price on a particular day and compares it to today.</td>
+</tr>
+<tr>
+<td><code>market_data.price_percent_change</code></td>
+<td><code>array</code></td>
+<td>An array containing the price change as a percent, calculated using <code>base_currency</code>. This comes from: a volume weighted amalgamation of different exchanges. Looks up price on a particular day and compares it to today.</td>
+</tr>
+<tr>
+<td><code>market_data.market_cap</code></td>
+<td><code>array</code></td>
+<td>number of coins * current price in a variety of currencies.</td>
+</tr>
+<tr>
+<td><code>market_data.total_volume</code></td>
+<td><code>array</code></td>
+<td>number of coins traded in the past <code>24 hours</code></td>
+</tr>
+<tr>
+<td><code>market_data.volume_change</code></td>
+<td><code>array</code></td>
+<td>number of coins traded in the past <code>24 hours</code> compared to <code>7d</code>, <code>14d</code>, <code>30d</code>, &amp;  <code>1yr</code></td>
+</tr>
+<tr>
+<td><code>market_data.high</code></td>
+<td><code>array</code></td>
+<td>the <code>24h</code> high in a variety of currencies</td>
+</tr>
+<tr>
+<td><code>market_data.low</code></td>
+<td><code>array</code></td>
+<td>the <code>24h</code> low in a variety of currencies</td>
+</tr>
+<tr>
+<td><code>community_data</code></td>
+<td><code>array</code></td>
+<td>TODO: this needs to be scoped out further, but for now should be relativly self explanitory.</td>
+</tr>
+<tr>
+<td><code>developer_data</code></td>
+<td><code>array</code></td>
+<td>Key metricis on the <code>opensource_url</code>, such as <code>forks</code>, <code>stars</code>, <code>subscribers</code>, <code>issues</code>. TODO: it would be great to see the change over time. The <code>momentum</code> as it were on these stats to see interest ramping up or cooling off.</td>
+</tr>
+<tr>
+<td><code>public_interest_stats</code></td>
+<td><code>array</code></td>
+<td>TODO: this needs to be scoped out further, but for now should be relativly self explanitory.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>array</code></td>
+<td>An array of localizations that contain descriptions. Currently only <code>en</code> supported. But this should make it easier when we want to add translations later on down the road. User will be able to toggle between these. <strong>TODO: Should the get have a specified parameter for localization, or is that a cookie, or how should we display localization by default?</strong></td>
+</tr>
+<tr>
+<td><code>used_for</code></td>
+<td><code>array</code></td>
+<td>What kind of coin is this. <strong>TODO: Should the get have a specified parameter for localization, or is that a cookie, or how should we display localization by default?</strong></td>
+</tr>
+<tr>
+<td><code>supply_generated</code></td>
+<td><code>array</code></td>
+<td>Description of how this coin generates supply.</td>
+</tr>
+<tr>
+<td><code>references</code></td>
+<td><code>array</code></td>
+<td>Array of objects contining <code>references.nice</code> &amp; <code>references.url</code>. These are what were used in Amazon Turk.</td>
 </tr>
 </tbody></table>
-<h1 id='developer'>Developer</h1><pre class="highlight javascript tab-javascript"><code><span class="c1">// using the node module</span>
-<span class="kr">const</span> <span class="nx">BCX</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'BCXDATA'</span><span class="p">);</span>
+<h3 id='cheat-sheet'>Cheat Sheet</h3>
+<p>Top 10 (ten) cheat items we have on this particular coin. </p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">BCX</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'xxx.api-key'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">developers</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">developers</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<p><strong>These are things you NEED to know before investing in this coin.</strong></p>
 
-<span class="c1">// plain javascript</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/developers"</span><span class="p">)</span>
+<p>A cheatsheet can have <strong>4</strong> types of information: <code>fundamental</code>, <code>general</code>, <code>fork</code>, <code>news</code></p>
 
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">developer</span>
+<p>This is server generated, and while we may more than 10 items, we try to give out a balanced understanding of 25% of each type of information.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">developer</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'xxx.api-key'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">developers</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="s2">"data"</span><span class="p">:[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"coinId"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">""</span><span class="p">:</span><span class="s2">""</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all developer information we have on the particular coin. Developer data is important in guaging how much technical support the community is having.</p>
-<h2 id='dev-endpoints'>DEV Endpoints</h2><h2 id='dev-passed-parameters'>DEV Passed Parameters</h2><h2 id='dev-coinid'>DEV CoinId</h2><h2 id='dev-returned-data'>DEV Returned Data</h2><h1 id='errors'>Errors</h1>
+<p><code>fundamental</code>: an alert about a factor making up the price. I.e. price, tcmi, volume, momentum etc...</p>
+
+<p><code>general</code>: something outside about the coin. example:
+The original Bitcoin software by Satoshi Nakamoto was released under the MIT license. Satoshi Nakamoto is a pseudonym for an anonomyous person or group still unknown to today.</p>
+
+<p><code>news</code>: An important alert about news in the media either recently or not.</p>
+
+<p><code>fork</code>: Information about the latest fork, hard or soft. Was it controversial. Are the core developers happy about this, or not. What makes it controversial. Link to more information.</p>
+<h1 id='errors'>Errors</h1>
 <aside class="notice">
 This will have to change and become more specific to the request as the API develops. This is a general overview of what should be returned upon error.
 </aside>
@@ -1362,7 +1872,6 @@ This will have to change and become more specific to the request as the API deve
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="javascript">javascript</a>
-                <a href="#" data-language-name="python">python</a>
           </div>
       </div>
     </div>

@@ -1,0 +1,236 @@
+openapi: 3.0.0
+servers:
+  - description: BCX DataAPI
+    url: https://api.bcxdata.com
+info: 
+  version: 1.0.0
+  contact: 
+    name: Brendan Robertson
+    url: https://bcxdata.com
+  title: BCX Data API
+  description: |
+    # Welcome
+    This is the documentation for the BCX Data repo. The idea will be that anyting that we show on BCX Data, a user can do with this API. There currently will be no internal API calls that only we are authenticated for. This is our outward facing API. For our internal data gathering app, see the other github repository on github.
+    
+    Each general section should contain the following sections *Endpoints, Passed Parameters, Variable Descriptions, Returned Data*
+    
+    <ol>
+    <li>TODO: insert link to internal data gathering app.</li>
+    <li>TODO: decide what timestamp format we want to use.</li>
+    </ol>
+
+    ## Philosophy
+    The API philosophy uses the following guidelines
+
+    * Short url's
+    * Use Plurals i.e. `/trades` not `/trade/all`
+    * Avoid Unnecessary Query Strings
+      * `/trades/:id/collections` is better than
+      * `/collections?trades=:id` is better than
+      * `/users?trades=:id?collections=:id`
+    * `GET` for fetching, `POST` for adding data, `PUT` for updating data, `PATCH` for updating data with partial information, `DELETE` for deleting data.
+    * Use *Envelopes*.
+      * Every JSON response is sent back inside a top level object {}
+      * TODO: what is most secure way to send back a CSV Response.
+      * Even on failure send back error
+    * On Successful 2XX Responses that don't require data
+      * Still return an object with data as a top level obj
+
+    ## Versioning
+    We follow semantic versioning. Major changes that will break previous functionality should be at a new endpoint of v2, v3, etc. Minor changes that don't break functionality, and can use the same endpoints will be rolled out with notice to users to allow for a smooth transition to the newer API.
+
+    ## JSON and CSV Support
+    API supports requests from the subdomain `api.bcxdata.com`. Requests from `localhost`, `127.0.0.1` should always succed to aid in development. 
+
+    <aside class="notice">
+      TODO: confirm with Wayne &amp; ask API expert.
+    </aside>
+
+    ## V1 Endpoints
+    **Base Url**: `api.bcxdata.com/v1/`
+
+    ### v1 non-auth endpoints
+
+    * `/candles` -> [go to amalgamated candles](#amalgamated-candles) -> USD amalgamation is imposed accross exchanges
+      * `/candles/:coinId[USD]`
+      * `/candles/:coinId[USD]/:frequency`
+      * `/candles/:coinId[USD]/:frequency/:period?start<timestamp>&end<timestamp>`
+    * `/exchanges` [go to exchanges](#exchanges)
+      * `/exchanges/:exchangeId`
+    * `/exchanges/:exchangeId/candles` [go to exchange candles](#exchange-candles)
+      * `/exchanges/:exchangeId/candles/:currency`
+      * `/exchanges/:exchangeId/candles/:currency/:frequency`
+      * `/exchanges/:exchangeId/candles/:currency/:frequency/:interval?start<timestamp>&end<timestamp>`
+    * `/coins` -> Data for the view of homepage on bcxdata.com [go to coins](#coins)
+      * `/coins/:coinId` -> All data for a particular coin, dev, community, news, cheatsheet, sumarized version of particular coin
+      * `/coins/:coinId/developer` -> all dev data on github: stars, forks, branches, issues etc...
+      * `/coins/:coinId/community` -> all community data: facebook, youtube, twitter, reddit, reddit hot issues, recent news etc...
+      * `/coins/:coinId/news` -> news on a particular coin # of posts in the past 24h
+      * `/coins/:coinId/cheat` -> cheat sheet data for the coin
+      * `/coins/:coinId/tcmi` -> gets the TCMI ranking for a coin
+
+      ## v2 Endpoints
+
+      **Base URL**: `api.bcxdata.com/v2/`
+
+      ### v2 non-auth endpoints
+
+      * `/nodes` -> returns number of nodes for a particular coin
+      * `/activty` -> vol, transactions, avg/day, record
+      * `/candles/:coinId[:coinPair]` -> ability to specify the coin's pair
+      * `/trades/:coinId`
+
+paths:
+  /candles:
+    get:
+      tags:
+        - Candles
+      responses:
+        '200':
+          description: 
+            Returns all amalgamated candles over the past `30 days`, with a `1d` frequency
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  type: string
+            csv:
+              schema:
+                type: string
+              
+  /candles/{coinId}:
+    get:
+      tags:
+        - Candles
+      parameters:
+        - name: coinId
+          in: path
+          required: true
+          description: Parameter description in CommonMark or HTML.
+          schema:
+            type : integer
+            format: int64
+            minimum: 1
+      responses:
+        '200':
+          description:
+            default desc
+  /candles/{coinId}/{frequency}:
+    get:
+      tags:
+        - Candles
+      summary: Returns a coin docs at the frequency specified
+      parameters:
+        - $ref: '#/components/schemas/coinId'
+        - in: path
+          name: coinId
+          required: true
+          description: description abovd
+          schema:
+            type: string
+        - in: path
+          name: frequency
+          required: true
+          description: The frequency at which the candle data will be amalgamated over `1d`, `1h`, `30m`
+          schema:
+            type: string
+      responses:
+        '200':
+          description:
+            get the aggregated candles over a specified period.
+
+components:
+  schemas:
+    coinId:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+
+components:
+  # Reusable schemas (data models)
+  schemas:
+    Date:
+      type: string
+      format: date
+    DateWithExample:
+      $ref: '#/components/schemas/Date'
+      description: Date schema extended with a `default` value... Or not?
+      default: 2000-01-01
+  # Reusable path, query, header and cookie parameters
+  parameters:
+    startDateParam:      # Can be referenced via '#/components/parameters/startDateParam'
+      name: startDate
+      in: query
+      description: What timestamp do you want the results from? TODO, decide what time datatype to use
+      required: false
+      schema:
+        type: integer
+        format: int32
+        minimum: 0
+        default: 0
+    offsetParam:      # Can be referenced via '#/components/parameters/offsetParam'
+      name: offset
+      in: query
+      description: Number of items to skip before returning the results.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        minimum: 0
+        default: 0
+    limitParam:       # Can be referenced as '#/components/parameters/limitParam'
+      name: limit
+      in: query
+      description: Maximum number of items to return.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 100
+        default: 20
+  # Security scheme definitions (see Authentication)
+  securitySchemes:
+    ...
+  # Reusable request bodies
+  requestBodies:
+    sendImageRB: # Can be referenced via '#/components/requestBodies/sendImageRB'
+        description: When a user wants to post a photo of themselves. *Example For Brendan's Reference*
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+          text/plain:
+            schema:
+              type: string
+  # Reusable responses, such as 401 Unauthorized or 400 Bad Request
+  responses:
+    404NotFound:       # Can be referenced as '#/components/responses/404NotFound'
+      description: The specified resource was not found.
+    ImageResponse:     # Can be referenced as '#/components/responses/ImageResponse'
+      description: An image.
+      content:
+        image/*:
+          schema:
+            type: string
+            format: binary
+    GenericError:      # Can be referenced as '#/components/responses/GenericError'
+      description: An error occurred.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  # Reusable examples
+  examples:
+    ...
+  # Reusable links
+  links:
+    ...
+  # Reusable callbacks
+  callbacks:
+    ...
