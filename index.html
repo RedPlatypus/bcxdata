@@ -715,11 +715,12 @@ While this data can be received from other places. Should we go to the trouble o
 </tbody></table>
 
 <aside class="notice">
-Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the candle data since inception.Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1h</code> returns only the last 30 days of data available.
+    Requesting <code>https://api.bcxdata.com/v1/candles/btc/1d</code> returns the candle data since inception.
+    Requesting <code>https://api.bcxdata.com/v1/candles/btc/1h</code> returns only the last 30 days of data available.
 </aside>
 
 <aside class="warning">
-  Requesting a time period longer than the frequencies time_period specified returns a 405 error.
+    Requesting a time period longer than the frequencies time_period specified returns a <code>405</code> error.
 </aside>
 <h2 id='ac-returned-data'>AC Returned Data</h2>
 <table><thead>
@@ -783,7 +784,7 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Kraken"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"krak"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"volume"</span><span class="p">:</span><span class="s2">"243921.38"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"quote"</span><span class="p">:</span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"timeStamp"</span><span class="p">:</span><span class="s2">"2018-05-03T20:31:24.737Z"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"pairs"</span><span class="p">:[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">pairs</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">traded</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">exchange.</span><span class="w">
            </span><span class="err">//</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//api.kraken.com/</span><span class="mi">0</span><span class="err">/public/AssetPairs</span><span class="w">
@@ -861,9 +862,9 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 <td>24h trading volume of the market</td>
 </tr>
 <tr>
-<td><code>quote</code></td>
+<td><code>base_currency</code></td>
 <td><code>string</code></td>
-<td>BCX Data currency id of the asset used to quote a price</td>
+<td>The default currency every pair is over in this market. When requesting <code>https://api.bcxdata.com/v1/exchanges/bfx/candles/btc</code> we know that we are getting candles for <code>BTCUSD</code>. This is also the currency of <code>volume</code>.</td>
 </tr>
 <tr>
 <td><code>timeStamp</code></td>
@@ -896,7 +897,8 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
             </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">7500.00</span><span class="p">,</span><span class="w">
             </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
             </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">92902.00</span><span class="w">
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">92902.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_price"</span><span class="p">:</span><span class="mf">8093.49</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="err">...</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="mi">29</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">candles</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -914,7 +916,7 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 </tr>
 <tr>
 <td><code>/exchanges/:exchange_id/candles/:bcx_symbol</code></td>
-<td>returns the defaults for a currency in relation to</td>
+<td>Returns a symbol in relation to the exchange base currency. Typically over <code>USD</code></td>
 </tr>
 <tr>
 <td><code>/exchanges/:exchange_id/candles/:bcx_symbol/:frequency</code></td>
@@ -925,7 +927,30 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 <td>Returns the interval of data at the frequency for the currency you specify.</td>
 </tr>
 </tbody></table>
-<h2 id='ec-passed-parameters'>EC Passed Parameters</h2>
+
+<blockquote>
+<p>Example error if <code>end</code> is past now:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w">   </span><span class="mi">404</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="w">  </span><span class="s2">"The data requested was more than what is available. Check your start and end dates."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"exchanges"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">6500.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">7500.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">92902.00</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w"> 
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='ec-passed-parameters'>EC Passed Parameters</h2>
 <table><thead>
 <tr>
 <th>Variable</th>
@@ -954,15 +979,15 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 </tr>
 <tr>
 <td><code>start</code></td>
-<td><code>Today</code></td>
+<td><code>30 days before today</code></td>
 <td><code>DateTime</code></td>
-<td>The value is stored as Firebase.ServerValue.TIMESTAMP but will default to todays current time.</td>
+<td>The day at which you want the data to begin. If not passed in, we will get data from 1 month ago.</td>
 </tr>
 <tr>
 <td><code>end</code></td>
-<td><code>30 days before today</code></td>
+<td><code>today</code></td>
 <td><code>DateTime</code></td>
-<td>The value is stored as a datetime object in firebase.</td>
+<td>The day at which the data ends. It needs to be greater than the start date. If it is a time past now, we return an error along with the requested data.</td>
 </tr>
 </tbody></table>
 <h2 id='ec-currency'>EC Currency</h2>
@@ -971,10 +996,14 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 <blockquote>
 <p>Example Requests</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/candles/btc"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/candles/xrm"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/candles/ethbtc"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/bfx/candles/xrmbcc"</span><span class="p">);</span>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">// These should default to BTCUSD &amp; XRMUSD respectively</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/btc"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/xrm"</span><span class="p">);</span>
+
+<span class="c1">// Since Exchange Candles don't need to be amalgamated. We can request a specific pair from the exchange.</span>
+<span class="c1">// These should request the pair ETHBTC &amp; XRMBCC respectively from the bitfinex market</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/ethbtc"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/xrmbcc"</span><span class="p">);</span>
 
 </code></pre>
 <table><thead>
@@ -1085,13 +1114,58 @@ Requesting <code>https://api.bcxdata.com/v1/candles/BTC/1d</code> returns the ca
 </tbody></table>
 
 <aside class="notice">
-Requesting `https://api.bcxdata.com/v1/BTC/1d` returns the candle data since inception.Requesting `https://api.bcxdata.com/v1/BTC/1h` returns only the last 30 days of data available.
+    Requesting <code>https://api.bcxdata.com/v1/exchanges/krak/candles/eth/1d</code> returns the candle data since inception.<br>
+    Requesting <code>https://api.bcxdata.com/v1/exchanges/krak/candles/eth/1h</code> returns only the last 30 days of data available.
 </aside>
 
 <aside class="warning">
-Requesting a time interval longer than the frequency max_return_data specified returns a 405 error.
+    Requesting a time period longer than the frequencies time_period specified returns a <code>405</code> error.
 </aside>
-<h2 id='ec-returned-data'>EC Returned Data</h2><h1 id='coins'>Coins</h1>
+<h2 id='ec-returned-data'>EC Returned Data</h2>
+<table><thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td><code>string</code></td>
+<td>The traded bair conjoined. &quot;btcusd&quot;</td>
+</tr>
+<tr>
+<td><code>open</code></td>
+<td><code>number</code></td>
+<td>The opening price at the begining of the period</td>
+</tr>
+<tr>
+<td><code>high</code></td>
+<td><code>number</code></td>
+<td>The high of the price for the period</td>
+</tr>
+<tr>
+<td><code>low</code></td>
+<td><code>number</code></td>
+<td>The low of the price for the period</td>
+</tr>
+<tr>
+<td><code>close</code></td>
+<td><code>number</code></td>
+<td>The close at the end of the period</td>
+</tr>
+<tr>
+<td><code>volume</code></td>
+<td><code>number</code></td>
+<td>The volume during the period</td>
+</tr>
+<tr>
+<td><code>last_price</code></td>
+<td><code>number</code></td>
+<td>The last price before moving to the next period</td>
+</tr>
+</tbody></table>
+<h1 id='coins'>Coins</h1>
 <p>Returns status and information about coins.</p>
 <h2 id='coin-endpoints'>Coin Endpoints</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// get coins </span>
 <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/coins"</span><span class="p">);</span>
