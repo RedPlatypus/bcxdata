@@ -506,11 +506,14 @@ While this data can be received from other places. Should we go to the trouble o
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">requested</span><span class="w"> </span><span class="err">default</span><span class="w"> </span><span class="err">data</span><span class="w"> 
+</span><span class="err">//</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="err">days</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">at</span><span class="w"> </span><span class="err">daily</span><span class="w"> </span><span class="err">intervals</span><span class="w">
+</span><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"btcusd"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bitcoin over United States Dollars"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bitcoin United States Dollars"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-13T20:31:24.737Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">6500.00</span><span class="p">,</span><span class="w">
             </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">7500.00</span><span class="p">,</span><span class="w">
             </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
@@ -518,7 +521,29 @@ While this data can be received from other places. Should we go to the trouble o
             </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">92902.00</span><span class="p">,</span><span class="w">
             </span><span class="s2">"last_price"</span><span class="p">:</span><span class="mi">7000</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="err">...</span><span class="w"> </span><span class="err">//</span><span class="w">  </span><span class="mi">29</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">points</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"btcusd"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bitcoin United States Dollars"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-14T20:31:24.737Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">7900.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">6000.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">7800.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">92902.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_price"</span><span class="p">:</span><span class="mi">7000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"btcusd"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bitcoin United States Dollars"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-15T20:31:24.737Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">7800.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">10291.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">7238.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">92902.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_price"</span><span class="p">:</span><span class="mi">7000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">//...</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="err">days</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">provided</span><span class="p">,</span><span class="w"> </span><span class="err">add</span><span class="w"> </span><span class="err">another</span><span class="w"> </span><span class="mi">27</span><span class="w"> </span><span class="err">objects.</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='v1-endpoints'>v1 endpoints</h3>
