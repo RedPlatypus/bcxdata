@@ -8,7 +8,7 @@ Authentication | `None`
 
 ```javascript
 // get exchange 
-let data = requester.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/btc");
+let data = requester.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/btceth");
 
 ```
 
@@ -17,20 +17,45 @@ let data = requester.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/btc")
 ```json
 {
     // Return 30 candles with 1d frequency
-    "exchanges":[
+    "data":[
         {
-            "symbol":"BTCUSD",
-            "open":6500.00,
-            "high":7500.00,
-            "low":6400.00,
-            "close":7000.00,
-            "volume":92902.00,
-            "last_price":8093.49
+            "symbol":"btceth",
+            "name":"Bitcoin Ethereum",
+            "time": "2017-12-13T20:31:24.737Z",
+            "open":12.00,
+            "high":14.00,
+            "low":10.00,
+            "close":11.00,
+            "volume":3783.00,
+            "last_price":7000
         },
-        ... // return 29 more candles
+        {
+            "symbol":"btceth",
+            "name":"Bitcoin Ethereum",
+            "time": "2017-12-14T20:31:24.737Z",
+            "open":11.00,
+            "high":25.00,
+            "low":11.00,
+            "close":20.00,
+            "volume":3783.00,
+            "last_price":7000
+        },
+        {
+            "symbol":"btceth",
+            "name":"Bitcoin Ethereum",
+            "time": "2017-12-15T20:31:24.737Z",
+            "open":20.00,
+            "high":24.00,
+            "low":19.00,
+            "close":20.00,
+            "volume":3783.00,
+            "last_price":7000
+        },
+        //... 3 days of data provided, add another 27 objects.
     ]
 }
 ```
+
 
 ### v1 endpoints
 
