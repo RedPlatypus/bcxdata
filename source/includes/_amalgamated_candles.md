@@ -24,11 +24,14 @@ console.log(data)
 > The above command returns JSON structured like this:
 
 ```json
+// user requested default data 
+// return 30 days of data at daily intervals
 {
     "data":[
         {
             "symbol":"btcusd",
-            "name":"Bitcoin over United States Dollars",
+            "name":"Bitcoin United States Dollars",
+            "time": "2017-12-13T20:31:24.737Z",
             "open":6500.00,
             "high":7500.00,
             "low":6400.00,
@@ -36,7 +39,29 @@ console.log(data)
             "volume":92902.00,
             "last_price":7000
         },
-        ... //  29 more data points
+        {
+            "symbol":"btcusd",
+            "name":"Bitcoin United States Dollars",
+            "time": "2017-12-14T20:31:24.737Z",
+            "open":7000.00,
+            "high":7900.00,
+            "low":6000.00,
+            "close":7800.00,
+            "volume":92902.00,
+            "last_price":7000
+        },
+        {
+            "symbol":"btcusd",
+            "name":"Bitcoin United States Dollars",
+            "time": "2017-12-15T20:31:24.737Z",
+            "open":7800.00,
+            "high":10291.00,
+            "low":6400.00,
+            "close":7238.00,
+            "volume":92902.00,
+            "last_price":7000
+        },
+        //... 3 days of data provided, add another 27 objects.
     ]
 }
 ```
