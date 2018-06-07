@@ -125,10 +125,10 @@ API supports requests from the subdomain `api.bcxdata.com`. Requests from `local
   * `/candles/:bcx_symbol[USD]/:frequency/:period?start<timestamp>&end<timestamp>`
 * `/exchanges` [go to exchanges](#exchanges)
   * `/exchanges/:exchange_id`
-* `/exchanges/:exchange_id/candles` [go to exchange candles](#exchange-candles)
-  * `/exchanges/:exchange_id/candles/:currency`
-  * `/exchanges/:exchange_id/candles/:currency/:frequency`
-  * `/exchanges/:exchange_id/candles/:currency/:frequency/:interval?start<timestamp>&end<timestamp>`
+* `/exchange_candles/:exchange_id` [go to exchange_candles](#exchange-candles)
+  * `/exchange_candles/:exchange_id/:currency`
+  * `/exchange_candles/:exchange_id/:currency/:frequency`
+  * `/exchange_candles/:exchange_id/:currency/:frequency/:interval?start<timestamp>&end<timestamp>`
 * `/coins` -> Data for the view of homepage on bcxdata.com [go to coins](#coins)
   * `/coins/:bcx_symbol` -> All data for a particular coin, dev, community, news, cheatsheet, sumarized version of particular coin
   * `/coins/:bcx_symbol/developer` -> all dev data on github: stars, forks, branches, issues etc...

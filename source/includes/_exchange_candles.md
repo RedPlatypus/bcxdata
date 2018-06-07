@@ -6,7 +6,7 @@ Returns candle data for the specified coin on a particular exchange.
 
 ```javascript
 // get exchange 
-let data = requester.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/btceth");
+let data = requester.get("https://api.bcxdata.com/v1/exchange_candles/bfx/btceth");
 
 ```
 
@@ -60,9 +60,9 @@ let data = requester.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/btcet
 Endpoint | Return
 ----- | ------
 `/exchanges` | Returns a list of supported exchanges & it's data. See [exchanges](#exchanges) for more information
-`/exchanges/:exchange_id/candles/:bcx_symbol` | Returns a symbol in relation to the exchange base currency. Typically over `USD` 
-`/exchanges/:exchange_id/candles/:bcx_symbol/:frequency` | returns the max interval of data possible for a specified frequency size. See heading "Interval" for frequency to data size relationship.
-`/exchanges/:exchange_id/candles/:bcx_symbol/:frequency/`<br>`:interval?start<timestamp>&end<timestamp>` | Returns the interval of data at the frequency for the currency you specify.
+`/exchange_candles/:exchange_id/:bcx_symbol` | Returns a symbol in relation to the exchange base currency. Typically over `USD` 
+`/exchange_candles/:exchange_id/:bcx_symbol/:frequency` | returns the max interval of data possible for a specified frequency size. See heading "Interval" for frequency to data size relationship.
+`/exchange_candles/:exchange_id/:bcx_symbol/:frequency/`<br>`:interval?start<timestamp>&end<timestamp>` | Returns the interval of data at the frequency for the currency you specify.
 
 
 > Example error if `end` is past now:
@@ -140,13 +140,13 @@ Candles returns the data by default in relation to a `base_currency` typically *
 
 ```javascript
 // These should default to BTCUSD & XRMUSD respectively
-let data = req.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/btc");
-let data = req.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/xrm");
+let data = req.get("https://api.bcxdata.com/v1/exchange_candles/bfx/btc");
+let data = req.get("https://api.bcxdata.com/v1/exchange_candles/bfx/xrm");
 
 // Since Exchange Candles don't need to be amalgamated. We can request a specific pair from the exchange.
 // These should request the pair ETHBTC & XRMBCC respectively from the bitfinex market
-let data = req.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/ethbtc");
-let data = req.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/xrmbcc");
+let data = req.get("https://api.bcxdata.com/v1/exchange_candles/bfx/ethbtc");
+let data = req.get("https://api.bcxdata.com/v1/exchange_candles/bfx/xrmbcc");
 
 ```
 
@@ -171,7 +171,7 @@ Zcash | zec
 > Warning
 
 ```javascript
-  let requestedData = req.get("https://api.bcxdata.com/v1/exchanges/bfx/candles/btc/1h/interval?start=2018-05-13:09:00:00:000&end=2017-05-13:09:00:00:000");
+  let requestedData = req.get("https://api.bcxdata.com/v1/exchange_candles/bfx/btc/1h/interval?start=2018-05-13:09:00:00:000&end=2017-05-13:09:00:00:000");
 ```
 
 > The above request returns this error
@@ -199,8 +199,8 @@ frequency | max_return_data
 
 
 <aside class="notice">
-    Requesting <code>https://api.bcxdata.com/v1/exchanges/krak/candles/eth/1d</code> returns the candle data since inception.<br>
-    Requesting <code>https://api.bcxdata.com/v1/exchanges/krak/candles/eth/1h</code> returns only the last 30 days of data available.
+    Requesting <code>https://api.bcxdata.com/v1/exchange_candles/krak/eth/1d</code> returns the candle data since inception.<br>
+    Requesting <code>https://api.bcxdata.com/v1/exchange_candles/krak/eth/1h</code> returns only the last 30 days of data available.
 </aside>
 
 <aside class="warning">

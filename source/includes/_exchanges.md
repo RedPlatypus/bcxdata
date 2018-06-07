@@ -55,13 +55,13 @@ let data = requester.get("https://api.bcxdata.com/v1/exchanges");
 }
 ```
 
-what will we return for JSON format? What does each category mean?
+In JSON format we list what each variable means.
 
 Variable | Type | Description
 --------- | --- | ---------
 `name` | `string` | Name of the exchange
 `id` | `string` | BCXData's id for the exchange
 `volume` | `string` | 24h trading volume of the market
-`base_currency` | `string` | The default currency every pair is over in this market. When requesting `https://api.bcxdata.com/v1/exchanges/bfx/candles/btc` we know that we are getting candles for `BTCUSD`. This is also the currency of `volume`.
+`base_currency` | `string` | The default currency every pair is over in this market. When requesting `https://api.bcxdata.com/v1/exchange_candles/bfx/btc` we know that we are getting candles for `BTCUSD`. `base_currency` is also the currency of `volume`.
 `timeStamp` | `string` | TimeStamp of the quoted volume.
 `pairs` | `array` | An array of tradeable pairs on that exchange
