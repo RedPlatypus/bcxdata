@@ -409,11 +409,7 @@
 
 <p><strong>From a front end perspective, it might be useful to create a repeated csv search that is emailed to the user on a daily/weekly/monthly basis using this method</strong></p>
 <h2 id='cross-origin-requests-sharing-cors'>Cross Origin Requests Sharing (CORS)</h2>
-<p>API supports requests from the subdomain <code>api.bcxdata.com</code>. Requests from <code>localhost</code>, <code>127.0.0.1</code> should always succed to aid in development. </p>
-
-<aside class="notice">
-  TODO: confirm with Wayne &amp; ask API expert.
-</aside>
+<p>API supports requests from the subdomain <code>api.bcxdata.com</code>. Requests from <code>localhost</code>, <code>127.0.0.1</code> should always succed to aid in development.</p>
 <h2 id='v1-endpoints'>V1 Endpoints</h2>
 <p><strong>Base Url</strong>: <code>api.bcxdata.com/v1/</code></p>
 <h3 id='v1-non-auth-endpoints'>v1 non-auth endpoints</h3>
@@ -447,11 +443,6 @@
 <li><code>/coins/:bcx_symbol/news</code> -&gt; news on a particular coin # of posts in the past 24h</li>
 <li><code>/coins/:bcx_symbol/cheat</code> -&gt; cheat sheet data for the coin</li>
 <li><code>/coins/:bcx_symbol/tcmi</code> -&gt; gets the TCMI ranking for a coin</li>
-</ul></li>
-<li><code>/dashboards</code> -&gt; <a href="#dashboards">go to dashboards</a> the home page information
-
-<ul>
-<li><code>/dashboards/:bcx_symbol</code> -&gt; the dashboard for a specific bcx_symbol</li>
 </ul></li>
 </ul>
 
@@ -837,16 +828,19 @@ While this data can be received from other places. Should we go to the trouble o
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"exchanges"</span><span class="p">:[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">I</span><span class="w"> </span><span class="err">figure</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">calling</span><span class="w"> </span><span class="err">this</span><span class="p">,</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">don't</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">which</span><span class="w"> </span><span class="err">exchange</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">information</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">yet</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">probably</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">easy</span><span class="w"> </span><span class="err">way</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">loop</span><span class="w"> </span><span class="err">through</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">exchanges.</span><span class="w">
+    </span><span class="s2">"exchanges"</span><span class="p">:[</span><span class="w"> 
+    </span><span class="err">//</span><span class="w"> </span><span class="err">I</span><span class="w"> </span><span class="err">figure</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">calling</span><span class="w"> </span><span class="err">this</span><span class="p">,</span><span class="w"> 
+    </span><span class="err">//</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">don't</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">which</span><span class="w"> </span><span class="err">exchange</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">information</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">yet</span><span class="w"> </span><span class="err">and</span><span class="w"> 
+    </span><span class="err">//probably</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">easy</span><span class="w"> </span><span class="err">way</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">loop</span><span class="w"> </span><span class="err">through</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">exchanges.</span><span class="w">
         </span><span class="p">{</span><span class="w">
            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Kraken"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"krak"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"volume"</span><span class="p">:</span><span class="s2">"243921.38"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"timeStamp"</span><span class="p">:</span><span class="s2">"2018-05-03T20:31:24.737Z"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"pairs"</span><span class="p">:[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">pairs</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">traded</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">exchange.</span><span class="w">
-           </span><span class="err">//</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//api.kraken.com/</span><span class="mi">0</span><span class="err">/public/AssetPairs</span><span class="w">
-           </span><span class="err">//</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">objects</span><span class="w"> </span><span class="err">under</span><span class="w"> </span><span class="err">`result`</span><span class="w">
+           </span><span class="s2">"pairs"</span><span class="p">:[</span><span class="w"> 
+            </span><span class="err">//</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">pairs</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">traded</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">exchange.</span><span class="w"> </span><span class="err">Example</span><span class="p">:</span><span class="w">
+            </span><span class="err">//</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//api.kraken.com/</span><span class="mi">0</span><span class="err">/public/AssetPairs</span><span class="w">
                </span><span class="s2">"bcheur"</span><span class="p">,</span><span class="w">
                </span><span class="s2">"bchusd"</span><span class="p">,</span><span class="w">
                </span><span class="s2">"bchxtbt"</span><span class="p">,</span><span class="w">
@@ -903,8 +897,6 @@ While this data can be received from other places. Should we go to the trouble o
 </tbody></table>
 <h1 id='exchange-candles'>Exchange Candles</h1>
 <p>Returns candle data for the specified coin on a particular exchange.</p>
-
-<p>Authentication | <code>None</code></p>
 <h2 id='ec-endpoints'>EC Endpoints</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// get exchange </span>
 <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/btceth"</span><span class="p">);</span>
 
@@ -977,7 +969,8 @@ While this data can be received from other places. Should we go to the trouble o
 </tbody></table>
 
 <blockquote>
-<p>Example error if <code>end</code> is past now:</p>
+<p>Example error if <code>end</code> is past now:
+Up for <strong>debate</strong>. Do we return error only, or do we return data in addition to the error for the start to end dates we have. </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"errors"</span><span class="p">:[</span><span class="w">
@@ -986,16 +979,43 @@ While this data can be received from other places. Should we go to the trouble o
             </span><span class="s2">"message"</span><span class="p">:</span><span class="w">  </span><span class="s2">"The data requested was more than what is available. Check your start and end dates."</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"exchanges"</span><span class="p">:[</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">6500.00</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">7500.00</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">92902.00</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"btceth"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bitcoin Ethereum"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 days ago, requested date"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">12.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">14.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">10.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">11.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">3783.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_price"</span><span class="p">:</span><span class="mi">7000</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="err">...</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"btceth"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bitcoin Ethereum"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yesterday"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">11.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">25.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">11.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">20.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">3783.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_price"</span><span class="p">:</span><span class="mi">7000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"btceth"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bitcoin Ethereum"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"today"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">20.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">24.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">19.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">20.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="mf">3783.00</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_price"</span><span class="p">:</span><span class="mi">7000</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="err">days</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">provided.</span><span class="w"> </span><span class="err">User</span><span class="w"> </span><span class="err">might</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">requested</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">days</span><span class="w"> </span><span class="err">ago</span><span class="p">,</span><span class="w"> 
+        </span><span class="err">//</span><span class="w"> </span><span class="err">until</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="err">days</span><span class="w"> </span><span class="err">into</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">future.</span><span class="w"> </span><span class="err">In</span><span class="w"> </span><span class="err">which</span><span class="w"> </span><span class="err">case</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">should</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="err">days</span><span class="w"> 
+        </span><span class="err">//</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">errors</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">letting</span><span class="w"> </span><span class="err">them</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">don't</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">data.</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='ec-passed-parameters'>EC Passed Parameters</h2>
@@ -1277,16 +1297,14 @@ While this data can be received from other places. Should we go to the trouble o
                     </span><span class="s2">"48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">39.19</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">140.39</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">193.92</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">2930.32</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"inception"</span><span class="p">:</span><span class="w"> </span><span class="mf">29103920.39</span><span class="w">
+                    </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">2930.32</span><span class="w">                
                 </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"price_percent_change"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.34</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"48h"</span><span class="p">:</span><span class="mf">31.395</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.395</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">121.395</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">231.395</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"inception"</span><span class="p">:</span><span class="w"> </span><span class="mf">1039.59</span><span class="w">
+                    </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">231.395</span><span class="w">
                 </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"market_cap"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"aud"</span><span class="p">:</span><span class="w"> </span><span class="mf">168686733397.9261</span><span class="p">,</span><span class="w">
@@ -1562,8 +1580,7 @@ While this data can be received from other places. Should we go to the trouble o
             </span><span class="s2">"48h"</span><span class="p">:</span><span class="w"> </span><span class="mf">39.19</span><span class="p">,</span><span class="w">
             </span><span class="s2">"7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">140.39</span><span class="p">,</span><span class="w">
             </span><span class="s2">"30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">193.92</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">2930.32</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"inception"</span><span class="p">:</span><span class="w"> </span><span class="mf">29103920.39</span><span class="w">
+            </span><span class="s2">"1yr"</span><span class="p">:</span><span class="w"> </span><span class="mf">2930.32</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"price_percent_change"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.34</span><span class="p">,</span><span class="w">
