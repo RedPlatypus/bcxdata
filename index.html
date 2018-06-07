@@ -427,12 +427,12 @@
 <ul>
 <li><code>/exchanges/:exchange_id</code></li>
 </ul></li>
-<li><code>/exchanges/:exchange_id/candles</code> <a href="#exchange-candles">go to exchange candles</a>
+<li><code>/exchange_candles/:exchange_id</code> <a href="#exchange-candles">go to exchange_candles</a>
 
 <ul>
-<li><code>/exchanges/:exchange_id/candles/:currency</code></li>
-<li><code>/exchanges/:exchange_id/candles/:currency/:frequency</code></li>
-<li><code>/exchanges/:exchange_id/candles/:currency/:frequency/:interval?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></li>
+<li><code>/exchange_candles/:exchange_id/:currency</code></li>
+<li><code>/exchange_candles/:exchange_id/:currency/:frequency</code></li>
+<li><code>/exchange_candles/:exchange_id/:currency/:frequency/:interval?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></li>
 </ul></li>
 <li><code>/coins</code> -&gt; Data for the view of homepage on bcxdata.com <a href="#coins">go to coins</a>
 
@@ -855,7 +855,7 @@ While this data can be received from other places. Should we go to the trouble o
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>what will we return for JSON format? What does each category mean?</p>
+<p>In JSON format we list what each variable means.</p>
 
 <table><thead>
 <tr>
@@ -882,7 +882,7 @@ While this data can be received from other places. Should we go to the trouble o
 <tr>
 <td><code>base_currency</code></td>
 <td><code>string</code></td>
-<td>The default currency every pair is over in this market. When requesting <code>https://api.bcxdata.com/v1/exchanges/bfx/candles/btc</code> we know that we are getting candles for <code>BTCUSD</code>. This is also the currency of <code>volume</code>.</td>
+<td>The default currency every pair is over in this market. When requesting <code>https://api.bcxdata.com/v1/exchange_candles/bfx/btc</code> we know that we are getting candles for <code>BTCUSD</code>. <code>base_currency</code> is also the currency of <code>volume</code>.</td>
 </tr>
 <tr>
 <td><code>timeStamp</code></td>
@@ -898,7 +898,7 @@ While this data can be received from other places. Should we go to the trouble o
 <h1 id='exchange-candles'>Exchange Candles</h1>
 <p>Returns candle data for the specified coin on a particular exchange.</p>
 <h2 id='ec-endpoints'>EC Endpoints</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// get exchange </span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/btceth"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">requester</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchange_candles/bfx/btceth"</span><span class="p">);</span>
 
 </code></pre>
 <blockquote>
@@ -955,15 +955,15 @@ While this data can be received from other places. Should we go to the trouble o
 <td>Returns a list of supported exchanges &amp; it&#39;s data. See <a href="#exchanges">exchanges</a> for more information</td>
 </tr>
 <tr>
-<td><code>/exchanges/:exchange_id/candles/:bcx_symbol</code></td>
+<td><code>/exchange_candles/:exchange_id/:bcx_symbol</code></td>
 <td>Returns a symbol in relation to the exchange base currency. Typically over <code>USD</code></td>
 </tr>
 <tr>
-<td><code>/exchanges/:exchange_id/candles/:bcx_symbol/:frequency</code></td>
+<td><code>/exchange_candles/:exchange_id/:bcx_symbol/:frequency</code></td>
 <td>returns the max interval of data possible for a specified frequency size. See heading &quot;Interval&quot; for frequency to data size relationship.</td>
 </tr>
 <tr>
-<td><code>/exchanges/:exchange_id/candles/:bcx_symbol/:frequency/</code><br><code>:interval?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></td>
+<td><code>/exchange_candles/:exchange_id/:bcx_symbol/:frequency/</code><br><code>:interval?start&lt;timestamp&gt;&amp;end&lt;timestamp&gt;</code></td>
 <td>Returns the interval of data at the frequency for the currency you specify.</td>
 </tr>
 </tbody></table>
@@ -1065,13 +1065,13 @@ Up for <strong>debate</strong>. Do we return error only, or do we return data in
 <p>Example Requests</p>
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="c1">// These should default to BTCUSD &amp; XRMUSD respectively</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/btc"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/xrm"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchange_candles/bfx/btc"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchange_candles/bfx/xrm"</span><span class="p">);</span>
 
 <span class="c1">// Since Exchange Candles don't need to be amalgamated. We can request a specific pair from the exchange.</span>
 <span class="c1">// These should request the pair ETHBTC &amp; XRMBCC respectively from the bitfinex market</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/ethbtc"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/xrmbcc"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchange_candles/bfx/ethbtc"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchange_candles/bfx/xrmbcc"</span><span class="p">);</span>
 
 </code></pre>
 <table><thead>
@@ -1137,7 +1137,7 @@ Up for <strong>debate</strong>. Do we return error only, or do we return data in
 <blockquote>
 <p>Warning</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code>  <span class="kd">let</span> <span class="nx">requestedData</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchanges/bfx/candles/btc/1h/interval?start=2018-05-13:09:00:00:000&amp;end=2017-05-13:09:00:00:000"</span><span class="p">);</span>
+<pre class="highlight javascript tab-javascript"><code>  <span class="kd">let</span> <span class="nx">requestedData</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"https://api.bcxdata.com/v1/exchange_candles/bfx/btc/1h/interval?start=2018-05-13:09:00:00:000&amp;end=2017-05-13:09:00:00:000"</span><span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>The above request returns this error</p>
@@ -1182,8 +1182,8 @@ Up for <strong>debate</strong>. Do we return error only, or do we return data in
 </tbody></table>
 
 <aside class="notice">
-    Requesting <code>https://api.bcxdata.com/v1/exchanges/krak/candles/eth/1d</code> returns the candle data since inception.<br>
-    Requesting <code>https://api.bcxdata.com/v1/exchanges/krak/candles/eth/1h</code> returns only the last 30 days of data available.
+    Requesting <code>https://api.bcxdata.com/v1/exchange_candles/krak/eth/1d</code> returns the candle data since inception.<br>
+    Requesting <code>https://api.bcxdata.com/v1/exchange_candles/krak/eth/1h</code> returns only the last 30 days of data available.
 </aside>
 
 <aside class="warning">
