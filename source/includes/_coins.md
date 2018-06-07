@@ -68,16 +68,14 @@ let data = requester.get("https://api.bcxdata.com/v1/coins");
                     "48h": 39.19,
                     "7d": 140.39,
                     "30d": 193.92,
-                    "1yr": 2930.32,
-                    "inception": 29103920.39
+                    "1yr": 2930.32                
                 },
                 "price_percent_change": {
                     "24h": 0.34,
                     "48h":31.395,
                     "7d": 35.395,
                     "30d": 121.395,
-                    "1yr": 231.395,
-                    "inception": 1039.59
+                    "1yr": 231.395
                 },
                 "market_cap": {
                     "aud": 168686733397.9261,
@@ -324,8 +322,7 @@ let data = requester.get("https://api.bcxdata.com/v1/coins/btc");
             "48h": 39.19,
             "7d": 140.39,
             "30d": 193.92,
-            "1yr": 2930.32,
-            "inception": 29103920.39
+            "1yr": 2930.32
         },
         "price_percent_change": {
             "24h": 0.34,

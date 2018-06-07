@@ -2,8 +2,6 @@
 
 Returns candle data for the specified coin on a particular exchange.
 
-Authentication | `None`
-
 ## EC Endpoints
 
 ```javascript
@@ -68,6 +66,7 @@ Endpoint | Return
 
 
 > Example error if `end` is past now:
+> Up for **debate**. Do we return error only, or do we return data in addition to the error for the start to end dates we have. 
 
 ```json
 {
@@ -77,16 +76,43 @@ Endpoint | Return
             "message":  "The data requested was more than what is available. Check your start and end dates."
         }
     ],
-    "exchanges":[
+    "data":[
         {
-            "symbol":"BTCUSD",
-            "open":6500.00,
-            "high":7500.00,
-            "low":6400.00,
-            "close":7000.00,
-            "volume":92902.00
+            "symbol":"btceth",
+            "name":"Bitcoin Ethereum",
+            "time": "2 days ago, requested date",
+            "open":12.00,
+            "high":14.00,
+            "low":10.00,
+            "close":11.00,
+            "volume":3783.00,
+            "last_price":7000
         },
-        ... 
+        {
+            "symbol":"btceth",
+            "name":"Bitcoin Ethereum",
+            "time": "yesterday",
+            "open":11.00,
+            "high":25.00,
+            "low":11.00,
+            "close":20.00,
+            "volume":3783.00,
+            "last_price":7000
+        },
+        {
+            "symbol":"btceth",
+            "name":"Bitcoin Ethereum",
+            "time": "today",
+            "open":20.00,
+            "high":24.00,
+            "low":19.00,
+            "close":20.00,
+            "volume":3783.00,
+            "last_price":7000
+        }
+        // 3 days of data provided. User might have requested data from 2 days ago, 
+        // until 30 days into the future. In which case we should only return 3 days 
+        // of data and an errors array letting them know we don't have that data.
     ]
 }
 ```

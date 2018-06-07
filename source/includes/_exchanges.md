@@ -27,16 +27,19 @@ let data = requester.get("https://api.bcxdata.com/v1/exchanges");
 
 ```json
 {
-    "exchanges":[ // I figure an array because if the user is calling this, they don't know which exchange they want more information on yet and probably want an easy way to loop through all exchanges.
+    "exchanges":[ 
+    // I figure an array because if the user is calling this, 
+    // they don't know which exchange they want more information on yet and 
+    //probably want an easy way to loop through all exchanges.
         {
            "name":"Kraken",
            "id":"krak",
            "volume":"243921.38",
            "base_currency":"usd",
            "timeStamp":"2018-05-03T20:31:24.737Z",
-           "pairs":[ // all pairs that can be traded on that exchange.
-           // https://api.kraken.com/0/public/AssetPairs
-           // the objects under `result`
+           "pairs":[ 
+            // all pairs that can be traded on that exchange. Example:
+            // https://api.kraken.com/0/public/AssetPairs
                "bcheur",
                "bchusd",
                "bchxtbt",

@@ -111,11 +111,7 @@ By default data will be returned in `JSON` format. The flag `?format=csv` should
 **From a front end perspective, it might be useful to create a repeated csv search that is emailed to the user on a daily/weekly/monthly basis using this method**
 
 ## Cross Origin Requests Sharing (CORS)
-API supports requests from the subdomain `api.bcxdata.com`. Requests from `localhost`, `127.0.0.1` should always succed to aid in development. 
-
-<aside class="notice">
-  TODO: confirm with Wayne &amp; ask API expert.
-</aside>
+API supports requests from the subdomain `api.bcxdata.com`. Requests from `localhost`, `127.0.0.1` should always succed to aid in development.
 
 ## V1 Endpoints
 **Base Url**: `api.bcxdata.com/v1/`
@@ -140,8 +136,6 @@ API supports requests from the subdomain `api.bcxdata.com`. Requests from `local
   * `/coins/:bcx_symbol/news` -> news on a particular coin # of posts in the past 24h
   * `/coins/:bcx_symbol/cheat` -> cheat sheet data for the coin
   * `/coins/:bcx_symbol/tcmi` -> gets the TCMI ranking for a coin
-* `/dashboards` -> [go to dashboards](#dashboards) the home page information
-  * `/dashboards/:bcx_symbol` -> the dashboard for a specific bcx_symbol
 
 
 **Questioning the following end points. Are they necessary. Do they add value?**
